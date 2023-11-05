@@ -28,21 +28,76 @@ List of Fruits:
 
 <h2>Table Demo</h2>
 
-<table border="1">
+<table border="1" style="width:50%;color:blue" bgColor="lightgreen">
+    <caption>FIG.1 Profit Chart</caption>
     <th>
         NAME</th>
     <th>AGE </th>
+    <th>HOBBIES </th>
 
     <tr>
         <td>Rizwan</td>
         <td>19</td>
+        <td>Cricket</td>
     </tr>
     <tr>
         <td>Sahron</td>
         <td>79</td>
+        <td>Football</td>
+    </tr>
+    <tr bgColor="yellow">
+        <td bgColor="orange">Saji</td>
+        <td>70</td>
+        <td>Cricket</td>
     </tr>
 
 
 </table>
 
 <br><br>
+
+<br><br>
+NESTED TABLES
+<br>
+<table border="2" bordercolor=“green” style="width:30%" >
+    <tr>
+        <td>Table 1</td>
+        <td> Table 1
+            <table border=“2” bordercolor=“blue”>
+                <tr>
+                    <td valign="bottom">Table 2L</td>
+                    <td>Table 2fgfgfgfgf dfdfdffd dsdsdfdfdffff dfdfdfdfd dfdfd df df df df d</td>
+                </tr>
+                <tr>
+                    <td>Table 2</td>
+                    <td align="right">Table 2R</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td> Table 1 </td>
+        <td> Table 1 </td>
+    </tr>
+</table>
+
+
+<br><br><br><br>
+MERGING CELLS Demo
+<br><br>
+<h1>HTML Merging Cells</h1>
+<table border="2" style="width:40%" background="IMAGES\1.jpg">
+    <tr>
+        <th colspan="2">1</th>
+        <th>2</th>
+    </tr>
+    <tr>
+        <td>>Word-wrap is used for the            purpose of wrapping. sed for the            purpose of wrapping.</td>
+        <td></td>
+        <td rowspan="2">c</td>
+    </tr>
+    <tr>
+        <td>d</td>
+        <td>e</td>
+    </tr>
+</table>
