@@ -9,6 +9,7 @@
             background-color: orange;
             animation-name: anim;
             animation-duration: 5s;
+            
         }
 
         @keyframes anim {
@@ -20,16 +21,77 @@
                 background-color: purple;
             }
         }
+
+        h1.X1 {
+            animation-name: anim2;
+            animation-duration: 5s;
+            animation-iteration-count:infinite
+        }
+
+        @keyframes anim2 {
+            from {
+                font-size: 10px;
+            }
+
+            to {
+                font-size: 40px;
+            }
+        }
+
+
+        div.Y1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: test;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        @keyframes test {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: blue;
+                left: 100px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: orange;
+                left: 100px;
+                top: 100px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 100px;
+            }
+
+            100% {
+                background-color: grey;
+                left: 0px;
+                top: 0px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h2>CSS Animation</h2>
+    <center>
+        <h1 class="X1">CSS Animation</h2>
+    </center>
     <div>
-    <p>Adding keyframes are must for the
-        CSS animation. The keyframe decides the
-        style or animation of the element at
-        certain times. </p>
+        <p>Adding keyframes are must for the
+            CSS animation. The keyframe decides the
+            style or animation of the element at
+            certain times. </p>
     </div>
 </body>
 
