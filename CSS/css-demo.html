@@ -15,10 +15,25 @@
             font-size:25px;
         }
 
+       
         p {
             color:red;
             font-size:10px;
         }
+
+        #p1,#p2,#span100 {
+            color:blue;
+            font-size:90px;
+        }
+        
+        img[width="100px"] {
+            margin: 20px;
+        }
+
+        /* {
+            color:blue;
+            font-size:10px;
+        } */
 
     </style>
 
@@ -31,16 +46,20 @@
     <div> This is para 2</div>
     <p> This is para 3</p>
 
+    <p id="abc"> This is para 11</p>
+    <p id="p1" > This is para 21</p>
+    <p id="p2"> This is para 31</p>
+
     <div class="style1"> Mango</div>
     <div class="style1"> Apple</div>
     <div class="style2"> Grapes</div>
     <div class="style100"> Blueberry</div>
 
-    <span style="display:block;color:rgb(225, 0, 255)"> Orange</span>
+    <span id="span100" style="display:block;color:rgb(225, 0, 255)"> Orange</span>
     <span style="font-size:40px;background-color: blanchedalmond;font-family: 'Segoe UI';"> Gauva</span>
 
     <img src="../IMAGES/photo3.png" >
-    <img src="../IMAGES/photo3.png" >
+    <img id="img1" src="../IMAGES/photo3.png" width="100px" height="100px">
 </body>
 
 
