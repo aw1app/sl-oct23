@@ -31,8 +31,15 @@
             margin: 20px;
         }
 
+        /* Descendant(Chile or Grandchild or deep inside anywhere) selector */
         p a{
-            color:yellow; 
+            color:yellow;
+        }
+
+        /* Direct Descendant selector */
+        p > a{
+            color:purple;             
+            font-size: 50px; 
         }
 
     </style>
@@ -44,7 +51,7 @@
 
     <p> This is para 1 <a href="" > This is an html link 1</a> </p>
     <div> This is para 2</div>
-    <p> This is para 3</p>
+    <p> This is para 3 <div> This is para 3.1 <a href="" > This is an html link 2.1 </a> </div> </p>
     <a href="" > This is an html link 2 </a>
 
     <p id="abc"> This is para 11</p>
