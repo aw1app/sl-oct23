@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+width:400px;
+height:200px;
+background-color: green;
+font-weight: bold;
+position: relative;
+animation: anim 5s infinite;
+}
+#div1{animation-timing-function: ease;}
+#div2{animation-timing-function: linear;}
+#div3{animation-timing-function: ease-in;}
+#div4{animation-timing-function: ease-out;}
+#div5{animation-timing-function: ease-in-out;}
+@keyframes anim {
+from {left:0px;}
+to{left:400px;}
+}
+
+</style>
+</head>
+</body>
+<h3>Animation timing function
+</h3>
+<p>
+</p>
+<div id="div1">ease</div>
+<div id="div2">linear</div>
+<div id="div3">ease-in</div>
+<div id="div4">ease-out</div>
+<div id="div5">ease-in-out</div>
+</body>
+</html>
