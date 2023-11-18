@@ -12,13 +12,21 @@
         background-color: blue;
     }
 
-    li::selection {
+    li:first-child {
         background-color: orange;
     }
 
 
     p.blinking:before {
         content: url("../IMAGES/animated-check-bullet-2.gif")
+    }
+
+    p.blinking:after {
+        content: "<b>Add to Cart</b>"
+    }
+
+    a:link{
+       color:cornsilk 
     }
 </style>
 
@@ -46,7 +54,13 @@
     <p class="blinking"> This can be preceded by a bullet.</p>
     <p> This can be preceded by a bullet.</p>
 
+    <a href="">Anchor tag 1</a>
+    <a href="">Anchor tag 2</a>
+    <a href="">Anchor tag 3</a>
+    <a href="">Anchor tag 4</a>
 
+    
+    <br><br><br><br>
 
 </body>
 
