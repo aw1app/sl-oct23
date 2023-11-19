@@ -1,0 +1,45 @@
+<script>
+    // Object creation demo using object literal approach
+
+    let user1 = {
+        name: "JACK",
+        age: 24
+    };
+
+    let user2 = {
+        name: "Jenny",
+        age: 40
+    };
+
+    console.log("User 1 name is " + user1.name);
+    console.log("User 1 age  is " + user1.age);
+
+    console.log("User 2 name is " + user2.name);
+    console.log("User 3 age  is " + user2.age);
+
+
+    // Object creation demo using class template using the "new"
+    class User {
+
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Behavoiurs (functions)
+
+        changeName(n1){
+            this.name = n1; 
+        }
+
+    };
+
+    let myuser1 = new User("Jamal", 34);
+    console.log("My User 1 name is " + myuser1.name);
+    console.log("My User 1 age  is " + myuser1.age);
+
+
+    myuser1.changeName("Vikas");
+    console.log("My User 1 name is " + myuser1.name);
+    console.log("My User 1 age  is " + myuser1.age);
+</script>
