@@ -2,57 +2,87 @@
 
 
 <head>
-<style></style>
+    <style></style>
 
 
-<script>
-// Decalaring variables
+    <script>
+        // Decalaring variables
 
-//GLOBAL SCOPE VARIABLES
-var x=10;
-var s ="hello";
-var b =true;
-x1=100;
+        //GLOBAL SCOPE VARIABLES
+        var x = 10;
+        var s = "hello";
+        var b = true;
+        x1 = 100;
 
-var c=x+x1; // c=110
+        var c = x + x1; // c=110
 
-console.log("value of c = " + c);
-//alert("value of c = " + c);
+        console.log("value of c = " + c);
+        //alert("value of c = " + c);
 
-// Function demo
-function f1( x , y ) {
+        function f0() {
+            console.log("inside f0 .value of c = " + c);
+        }
 
-    var z = x+y;
+        // Function demo
+        function f1(x, y) {
 
-    return z;
+            var z = x + y; // z is LOCAL SCOPE VARIABLE
 
-};
+            console.log("inside f1 z=" + z);
+            return z;
 
-var a1= 1;
-var a2= 4;
+        };
 
-var result = f1(a1, a2);
-console.log ("result  = " + result); // 5
+        f0();
 
-var a3= 11;
-var a4= 49;
+        var a1 = 1;
+        var a2 = 4;
 
-result = f1(a3, a4);
-console.log ("result  = " + result); // 5
+        var result = f1(a1, a2);
+        console.log("result  = " + result); // 5
+        //console.log("inside f1 z=" + z);
+
+        var a3 = 11;
+        var a4 = 49;
+
+        result = f1(a3, a4);
+        console.log("result  = " + result); // 5
 
 
-</script>
+    </script>
+
+
+    <script>
+        // Demo block scope variable
+        var p = 10;
+
+        function demoBlockscope() {
+
+            let q = 100;
+            console.log(" inside demoBlockscope q=" +q);
+            {
+                let a = 15;
+                console.log(" inside demoBlockscope and inside a BLOCK  a=" + a);
+            }
+            console.log(" inside demoBlockscope a=" + a);
+        }
+
+        // ERROR console.log(" outside demoBlockscope a=" + a);
+
+        demoBlockscope();
+
+    </script>
 
 
 </head>
 
 <body>
-    <p id="msgPara">    </p>
+    <p id="msgPara"> </p>
     <p>Hello</p>
 
-<script>
-document.getElementById("msgPara").textContent = c;
-</script>
+    <script>
+        document.getElementById("msgPara").textContent = c;
+    </script>
 </body>
 
 </html>
