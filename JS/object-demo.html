@@ -28,8 +28,8 @@
 
         // Behavoiurs (functions)
 
-        changeName(n1){
-            this.name = n1; 
+        changeName(n1) {
+            this.name = n1;
         }
 
     };
@@ -42,4 +42,20 @@
     myuser1.changeName("Vikas");
     console.log("My User 1 name is " + myuser1.name);
     console.log("My User 1 age  is " + myuser1.age);
+
+
+    // CHALLENGE 6
+    class Car {
+        constructor(modelName, color, price) {
+            this.modelName = modelName;
+            this.color = color;
+            this.price = price;
+        }
+    }
+
+    let car1 = new Car("BMW i8", "White", 120000);
+    let car2 = new Car("BMW M4", "Green", 120000);
+    let total = car1.price + car2.price;
+    console.log("Total price = " + total);
+
 </script>
