@@ -1,0 +1,28 @@
+<script>
+    // Traditional JS function
+    function A1(a, c) {
+        z = a + c;
+        return z;
+    }
+
+    let result = A1(2, 6);
+    console.log("result = " + result);
+
+    // Arrow functions
+    let A2 = (a, c) =>{
+        z = a + c;
+        return z;
+    };
+
+    let result2 = A2(2, 6);
+    console.log("result2 = " + result2);
+
+    // let A3 = (a, c) =>{        
+    //    return a + c;
+    //}; 
+
+    let A3 = (a, c) => a + c;
+    let result3 = A3(2, 16);
+    console.log("result3 = " + result3);    
+
+</script>
