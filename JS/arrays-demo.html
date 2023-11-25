@@ -26,20 +26,46 @@
 
         let checkVoiletExists = colors.find(element => element === "voilet");
         console.log("grey is in colors " + checkVoiletExists);
+        console.log(`grey is in colors  ${checkVoiletExists}`);
 
 
         // Example 2
         // check if a users array of objects has a user with some particuar name
         const users = [
             { id: 1, name: "x" },
-            { id: 2, name:"y" },
-            { id: 3, name:"x1" },
-            { id: 4, name:"y1" },
+            { id: 2, name: "y" },
+            { id: 3, name: "x1" },
+            { id: 4, name: "y1" },
         ];
-        const userXExists = users.find( u => u.name === "x");
-  
+        const userXExists = users.find(u => u.name === "x");
+
         console.log(userXExists);
+
+
+        // Filter example
+        let users1 = users.filter(u => u.id !== 3);
+        console.log(users1);
+
+        // sorting
+        console.log("Sorting array..");
+        arr = [2, 4, 10, 17, 14];
+        console.log(arr.sort((a, b) => a < b));
     </script>
+
+
+    <h2>Reduce() Method</h2>
+    <p>Calculate the sum of the rounded numbers in
+        a given array.</p>
+    <p id="result"></p>
+    <script>
+        const numbers = [1.6, 2.3, 5.8, 3.2];        
+        
+        sum=0;
+        numbers.reduce( (sum,num) => sum+num);
+
+        document.getElementById("result").innerHTML = sum;
+    </script>
+
 </body>
 
 </html>
