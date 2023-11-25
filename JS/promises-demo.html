@@ -25,7 +25,9 @@
             let sum = 0;
             for (let i = 0; i < 5; i++) { sum = sum + i };
 
-            jobSuccess = true;
+            // Once the job is done, call the callback functions, either
+            // success function or the error function
+            jobSuccess = true; // simulating the job success
             if (jobSuccess) {
                 mySuccessFunction(sum);
             } else {
