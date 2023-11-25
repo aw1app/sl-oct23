@@ -1,0 +1,45 @@
+<script>
+
+    let add = (a, b) => { for (let i = 0; i < 1000000000; i++); console.log("Inside add function " + (a + b)); return a + b };
+
+    console.log("STATEMENT1");
+    console.log("STATEMENT2");
+    console.log(`STATEMENT 3  ${add(2, 5)}`);
+    console.log("STATEMENT4");
+    console.log("STATEMENT5");
+
+
+    console.log("\n\n PROMISE BEGINS...");
+
+    let f1 = (result) => console.log("result computed by the pronmise is =" + result);
+    let f2 = (error) => console.log("pronmise failed with error message  =" + error);
+
+
+    // Definiing the promise
+    let myPromise = new Promise(
+
+        (mySuccessFunction, myErrorfunction) => {
+
+            // The job done by the promise
+            let jobSuccess = false;
+            let sum = 0;
+            for (let i = 0; i < 5; i++) { sum = sum + i };
+
+            jobSuccess = true;
+            if (jobSuccess) {
+                mySuccessFunction(sum);
+            } else {
+                myErrorfunction(new Error("Could not do the sum"));
+            }
+
+        }
+    );
+
+    //myPromise.then(res => f1(res)).catch(err => f2(err));
+    console.log("STATEMENT10");
+    console.log("STATEMENT20");
+    myPromise.then(res => f1(res)).catch(err => f2(err));
+    console.log("STATEMENT40");
+    console.log("STATEMENT50");
+
+</script>
