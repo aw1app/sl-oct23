@@ -11,6 +11,6 @@ import { Product } from '../model/product';
 })
 export class ProductV2Component {
 
-  product:Product=new Product();
+  product:Product=new Product("Lenova Mouse","https://5.imimg.com/data5/IA/UN/MY-3208689/lenovo-laptops-.png", 500);
 
 }
