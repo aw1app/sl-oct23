@@ -1,8 +1,8 @@
 export class Product {
 
-    productName: string = "HP Laptop";
-    productImage:string = "https://in-media.apjonlinecdn.com/magefan_blog/Laptop.jpg";
-    price: number = 1000;
+    productName: string = "";
+    productImage:string = "";
+    price: number = 0;
 
     constructor(productName: string,productImage:string,price: number ){
         this.productName=productName;

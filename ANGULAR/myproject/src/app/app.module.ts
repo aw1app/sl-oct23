@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { UserComponent } from './user/user.component';
 import { ProductV2Component } from './product-v2/product-v2.component';
+import { ProductlistComponent } from './productlist/productlist.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProductV2Component } from './product-v2/product-v2.component';
       AppComponent,
       ProductComponent,
       ProductV2Component,
-      UserComponent
+      UserComponent,
+      ProductlistComponent
     ],
     imports: [],
     exports:[],
