@@ -9,5 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
+  productName: string = "HP Laptop";
+  price: number = 1000;
 
 }
