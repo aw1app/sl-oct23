@@ -11,7 +11,7 @@ import { Product } from '../model/product';
 })
 export class ProductV2Component  implements OnInit {
 
-  product:Product=new Product(
+  product:Product=new Product(1,
   "Lenova Mouse",
   "https://5.imimg.com/data5/IA/UN/MY-3208689/lenovo-laptops-.png",
    500);
