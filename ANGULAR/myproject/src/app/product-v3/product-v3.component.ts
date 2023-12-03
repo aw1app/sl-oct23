@@ -24,7 +24,7 @@ export class ProductV3Component  implements OnInit {
 
   ngOnInit():void {
     console.log("Inside ngOnInit() id="+this.xyz);      
-    this.product = this.productService.getProduct(this.product.id);
+    this.product = this.productService.getProduct(Number(this.xyz));
     this.product.id = Number(this.xyz);  
   }
 }
