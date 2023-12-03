@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../model/product';
 
@@ -22,8 +22,18 @@ export class ProductV2Component  implements OnInit {
   @Input("name")
   name!:string;
 
+  @Input("price")
+  price!:string;
+
   ngOnInit():void {
     this.product.productName = this.name;
+    this.product.price = Number(this.price);
   }
+
+  @Output()
+  abcEvent = new EventEmitter<string>();
+
+  counter:number=0;
+  functionToEmitAbcEvent = () => { this.abcEvent.emit("Message from Child "+(this.counter++))};
     
 }

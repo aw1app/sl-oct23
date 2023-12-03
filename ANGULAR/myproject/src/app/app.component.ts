@@ -18,4 +18,6 @@ export class AppComponent {
 
   username="user100";
   age=56;
+
+  parentFunctionF1=(evt:any)=>console.log("Inside parentFunctionF1() " + evt);
 }
