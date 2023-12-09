@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators  } from '@angular/forms';
 import { ProductService } from '../product.service';
 
 @Component({
   selector: 'addproduct',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule ],
   templateUrl: './addproduct.component.html',
   styleUrl: './addproduct.component.css'
 })
