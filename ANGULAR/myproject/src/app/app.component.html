@@ -17,7 +17,18 @@
 <product-v3 xyz="2"></product-v3>
 <product-v3 xyz="3"></product-v3>
 
-  <h1>HELLO, {{ username }}, your age is {{age}}</h1>
-  <p>Congratulations! Your app is running. 🎉</p>
+  <h1   >HELLO, {{ username }}, your age is {{age}}</h1>
+  <p [ngClass]="{textborder:varX}" >Congratulations! Your app is running. 🎉</p>
+
+  <p [ngStyle]="{'font-size.px':varX}" >Hi</p>
+
+  <p>Switch demo</p>
+  <div> There are {{getLength()}}    numbers.</div>
+  <div [ngSwitch]="getLength()">
+    <span *ngSwitchCase="0">No number is added</span>
+    <span *ngSwitchCase="1">One number is added</span>
+    <span *ngSwitchCase="2">Two number is added</span>
+    <span *ngSwitchCase="3">Three number is added</span>
+     </div>
 
 </div>

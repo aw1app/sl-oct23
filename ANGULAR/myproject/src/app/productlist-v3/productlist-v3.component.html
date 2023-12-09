@@ -7,8 +7,8 @@
         <li>{{prod.productName}},{{prod.price}}</li>
     </ul> -->
 
-    <div *ngIf="products.length>0">
-        <table border="2">
+    <div *ngIf="products.length>0;else elseBlock">
+        <table border="2" >
 
             <thead>
                 <tr>
@@ -27,9 +27,11 @@
         </table>
     </div>
      
-    <div *ngIf="products.length==0">
+    <ng-template #elseBlock> No products on Sale!! Visit a day later. </ng-template >
+
+    <!-- <div *ngIf="products.length==0">
         No products on Sale!! Visit a day later.
-    </div>
+    </div> -->
 
 
 
