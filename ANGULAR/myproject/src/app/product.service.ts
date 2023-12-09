@@ -39,5 +39,12 @@ export class ProductService {
     return productsPartialList;
   }
 
+  // Create / Add a new product
+  addProduct = (name: string, price: number): void => {
+    console.log("Inside Product Service addProduct");
+    let new_product: Product = new Product(this.products.length+1, name, "http://someimage.jpg", price);
+    this.products.push(new_product);
+  }
+
 
 }

@@ -20,6 +20,7 @@ export class AddproductComponent {
   productService!:ProductService;
 
   constructor(private fb: FormBuilder, productService:ProductService){
+    this.productService=productService;
     this.productForm = this.fb.group(
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
@@ -30,7 +31,9 @@ export class AddproductComponent {
 
   addProduct():void{
     console.log("Inside addProduct()");
-    //this.productService.addProduct(this.productForm.value.productName,this.productForm.value.productPrice, );    
+    console.log("Inside addProduct() this.productForm.value.productName" + this.productForm.value.productName);
+    console.log("Inside addProduct() this.productForm.value.productPrice" + this.productForm.value.productPrice);
+    this.productService.addProduct(this.productForm.value.productName,Number(this.productForm.value.productPrice));    
   }
 
 
