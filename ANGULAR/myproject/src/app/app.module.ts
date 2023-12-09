@@ -9,6 +9,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import {FormsModule } from "@angular/forms";
 import { ProductService } from './product.service';
 import { ProductV3Component } from './product-v3/product-v3.component';
+import { ProductlistV3Component } from './productlist-v3/productlist-v3.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { ProductV3Component } from './product-v3/product-v3.component';
       ProductV2Component,
       UserComponent,
       ProductlistComponent,
-      ProductV3Component
+      ProductV3Component,
+      ProductlistV3Component
     ],
     providers:[ProductService],
     imports: [FormsModule,BrowserModule],
