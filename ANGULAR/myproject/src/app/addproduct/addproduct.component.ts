@@ -29,10 +29,7 @@ export class AddproductComponent {
     );   
   }
 
-  addProduct():void{
-    console.log("Inside addProduct()");
-    console.log("Inside addProduct() this.productForm.value.productName" + this.productForm.value.productName);
-    console.log("Inside addProduct() this.productForm.value.productPrice" + this.productForm.value.productPrice);
+  addProduct():void{  
     this.productService.addProduct(this.productForm.value.productName,Number(this.productForm.value.productPrice));    
   }
 
