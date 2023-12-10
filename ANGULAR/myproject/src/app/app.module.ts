@@ -15,6 +15,9 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { ProductComponentV4 } from './product-component-v4/product-component-v4.component';
 import { ProductListV4Component } from './product-list-v4/product-list-v4.component';
 import { ProductServiceV4 } from './product-service-v4.service';
+import { RouterModule,Router, provideRouter, withComponentInputBinding } from '@angular/router';
+import { routes } from './app.routes';
+import { NoSuchComponent } from './no-such/no-such.component';
 
 @NgModule({
     declarations: [
@@ -27,11 +30,12 @@ import { ProductServiceV4 } from './product-service-v4.service';
       ProductlistV3Component,
       AddproductComponent,
       ProductComponentV4,
-      ProductListV4Component
+      ProductListV4Component,
+      NoSuchComponent
     ],
-    providers:[ProductService,ProductServiceV4],
-    imports: [FormsModule,BrowserModule,HttpClientModule,ReactiveFormsModule ],
-    exports:[],
+    providers:[ProductService,ProductServiceV4, provideRouter(routes, withComponentInputBinding())],
+    imports: [FormsModule,BrowserModule,HttpClientModule,ReactiveFormsModule, RouterModule.forRoot(routes) ],
+    exports:[RouterModule],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

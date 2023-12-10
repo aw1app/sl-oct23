@@ -1,10 +1,13 @@
-<div style="border: 2px solid blue;">
 
-  <product-v4 productId="3"></product-v4>
-  <product-v4 productId="4"></product-v4>
-  <product-v4 productId="5"></product-v4>
-  <product-v4 productId="10"></product-v4>
 
-  <product-list-v4></product-list-v4>
+  <ul class="horizontal-nav">
+    <li><a [routerLink]="['/home']">Home</a></li>  
+    <li><a [routerLink]="['/product-list']">Product List</a></li>
+    <li><a [routerLink]="['/add-product']">Add New Product</a></li>
+    <li><a [routerLink]="['/product/1']">Product No 1</a></li>
+    
+  </ul>
 
-</div>
+
+  <router-outlet></router-outlet>
+

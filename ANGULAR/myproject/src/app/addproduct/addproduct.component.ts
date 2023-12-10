@@ -27,7 +27,8 @@ export class AddproductComponent {
         productName: ['', [Validators.required, Validators.minLength(3)]],
         productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]]
       }
-    );   
+    ); 
+      
   }
 
   addProduct():void{  

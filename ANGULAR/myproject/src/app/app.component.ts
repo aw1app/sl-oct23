@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { UserComponent } from './user/user.component';
 import { ProductV2Component } from './product-v2/product-v2.component';
@@ -10,12 +10,14 @@ import { ProductlistV3Component } from './productlist-v3/productlist-v3.componen
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ProductListV4Component } from './product-list-v4/product-list-v4.component';
 import { ProductComponentV4 } from './product-component-v4/product-component-v4.component';
+import { routes } from './app.routes';
+import { NoSuchComponent } from './no-such/no-such.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, ProductComponent, UserComponent, ProductV2Component,
-     ProductV3Component,ProductlistV3Component, AddproductComponent, ProductListV4Component,ProductComponentV4],
+     ProductV3Component,ProductlistV3Component, AddproductComponent, ProductListV4Component,ProductComponentV4, NoSuchComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
