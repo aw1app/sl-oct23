@@ -5,8 +5,8 @@ import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root', 
-  
+  providedIn: 'root',
+
 })
 export class ProductServiceV4 {
 
@@ -20,10 +20,11 @@ export class ProductServiceV4 {
   }
 
   getAllProducts = (): Observable<ProductV4[]> => {
-   
     return this.httpClient.get<{ products: ProductV4[] }>(this.apiUrl).pipe(map(response => response.products));
   }
 
-
+  getProduct(id: string): Observable<ProductV4> {
+    return this.httpClient.get<ProductV4>(this.apiUrl + "/" + id);
+  }
 
 }
