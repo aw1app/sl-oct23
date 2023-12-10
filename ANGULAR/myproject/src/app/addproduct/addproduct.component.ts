@@ -21,6 +21,7 @@ export class AddproductComponent {
 
   constructor(private fb: FormBuilder, productService:ProductService){
     this.productService=productService;
+
     this.productForm = this.fb.group(
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],

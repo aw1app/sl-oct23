@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
@@ -29,7 +30,7 @@ import { ProductServiceV4 } from './product-service-v4.service';
       ProductListV4Component
     ],
     providers:[ProductService,ProductServiceV4],
-    imports: [FormsModule,BrowserModule, ReactiveFormsModule],
+    imports: [FormsModule,BrowserModule,HttpClientModule,ReactiveFormsModule ],
     exports:[],
     bootstrap: [AppComponent]
 })

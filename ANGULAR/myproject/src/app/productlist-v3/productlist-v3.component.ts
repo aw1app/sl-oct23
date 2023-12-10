@@ -13,7 +13,7 @@ import { ProductService } from '../product.service';
 export class ProductlistV3Component implements OnInit{
 
   products!:Product[];  
-  productService: ProductService
+  productService: ProductService;
 
 
 
