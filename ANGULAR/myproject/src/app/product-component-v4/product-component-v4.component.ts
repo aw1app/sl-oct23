@@ -21,6 +21,7 @@ export class ProductComponentV4 implements OnInit {
 
   constructor(productService: ProductServiceV4, route: ActivatedRoute) {
     this.productService = productService;
+    this.route = route;
   }
 
 

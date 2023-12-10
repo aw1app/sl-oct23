@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductV4 } from '../model/product-v4';
 import { ProductServiceV4 } from '../product-service-v4.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'product-list-v4',
   standalone: true,
-  imports: [CommonModule, HttpClientModule ],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './product-list-v4.component.html',
   styleUrl: './product-list-v4.component.css'
 })
