@@ -1,0 +1,38 @@
+<div style="border: 2px solid blue;">
+
+  <addproduct></addproduct>
+
+  <BR><BR>
+
+  <productlist-v3></productlist-v3>
+  <BR>
+  <productlist></productlist>
+
+  <hr>
+  <br><br>
+  <product></product>
+
+  <product-v2  name="Lenova" price="200" (abcEvent)="parentFunctionF1($event)"></product-v2>
+  <product-v2  name="Dell" price="1220.5" ></product-v2>
+
+  <user></user>
+  
+<product-v3 xyz="1"></product-v3>
+<product-v3 xyz="2"></product-v3>
+<product-v3 xyz="3"></product-v3>
+
+  <h1   >HELLO, {{ username }}, your age is {{age}}</h1>
+  <p [ngClass]="{textborder:varX}" >Congratulations! Your app is running. 🎉</p>
+
+  <p [ngStyle]="{'font-size.px':varX}" >Hi</p>
+
+  <p>Switch demo</p>
+  <div> There are {{getLength()}}    numbers.</div>
+  <div [ngSwitch]="getLength()">
+    <span *ngSwitchCase="0">No number is added</span>
+    <span *ngSwitchCase="1">One number is added</span>
+    <span *ngSwitchCase="2">Two number is added</span>
+    <span *ngSwitchCase="3">Three number is added</span>
+     </div>
+
+</div>

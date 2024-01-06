@@ -1,21 +1,13 @@
-<div style="border: 2px solid blue;">
 
-  <productlist></productlist>
 
-  <hr>
-  <br><br>
-  <product></product>
+  <ul class="horizontal-nav">
+    <li><a [routerLink]="['/home']">Home</a></li>  
+    <li><a [routerLink]="['/product-list']">Product List</a></li>
+    <li><a [routerLink]="['/add-product']">Add New Product</a></li>
+    <li><a [routerLink]="['/product/1']">Product No 1</a></li>
+    
+  </ul>
 
-  <product-v2  name="Lenova" price="200" (abcEvent)="parentFunctionF1($event)"></product-v2>
-  <product-v2  name="Dell" price="1220.5" ></product-v2>
 
-  <user></user>
-  
-<product-v3 xyz="1"></product-v3>
-<product-v3 xyz="2"></product-v3>
-<product-v3 xyz="3"></product-v3>
+  <router-outlet></router-outlet>
 
-  <h1>HELLO, {{ username }}, your age is {{age}}</h1>
-  <p>Congratulations! Your app is running. 🎉</p>
-
-</div>
