@@ -9,6 +9,9 @@ public class ArraysDemo {
 		
 		// Access and print the second element of the array
 		System.out.println(myArray[1]);
+		
+		// CHALLENGE-2 . Create a String array that holds names of 4 people.
+		// Loop thru and print all the names.
 
 	}
 
