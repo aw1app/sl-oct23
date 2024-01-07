@@ -43,8 +43,10 @@ public class ArraysDemo {
 			System.out.println("Row "+i + ":");
 			
 			for (int j = 0; j < numbers[i].length; j++) {				
-				System.out.println(numbers[i][j]);
+				System.out.print("\t"+ numbers[i][j]);
 			}
+			
+			System.out.println("");
 
 		}
 
