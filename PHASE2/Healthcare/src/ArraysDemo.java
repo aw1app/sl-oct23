@@ -31,16 +31,16 @@ public class ArraysDemo {
 		doctors[9] = new Doctor();
 
 		// 2-d array
-		System.out.println("\n\n Defining and looping thru all elements(rows and cols) of a 2-d array DEMO \n");
+		System.out.println("\n\n Defining and looping thru all elements(rows and cols)\n of a 2-d array DEMO \n");
 
 		int[][] numbers = { 
 				{ 1, 2, 3, 4, 5 },
-				{ 11, 12, 13, 14, 15 }
+				{ 11, 14, 15 }
 				};
 
 		for (int i = 0; i < numbers.length; i++) {
 
-			System.out.println("Row "+i);
+			System.out.println("Row "+i + ":");
 			
 			for (int j = 0; j < numbers[i].length; j++) {				
 				System.out.println(numbers[i][j]);
