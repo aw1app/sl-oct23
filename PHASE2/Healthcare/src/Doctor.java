@@ -10,6 +10,8 @@ public class Doctor {
 	String designation;
 	boolean isOnDuty;
 	
+	static int noOfWorkingDays=250;
+	
 	double chargePerVisit=100;
 	
 	{
@@ -26,9 +28,10 @@ public class Doctor {
 	to provide detailed explanations for
 	a block of code
 	*/
-	void examinePatient() {
+	void examinePatient(Patient pat) {
 		int x=10; // local scoped varibles
 		System.out.println("Inside examinePatient method.");
+		System.out.println("Examining "+ pat.name);
 		System.out.println(x);
 	}
 
@@ -40,5 +43,11 @@ public class Doctor {
 	public double calculateBill(int noOfVisits) {
 		return chargePerVisit*noOfVisits;
 	}
+	
+	public double calculateBill(String patientType, int noOfVisits) {
+		return chargePerVisit*noOfVisits;
+	}
+	
+	
 
 }

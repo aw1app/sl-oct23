@@ -16,7 +16,10 @@ public class Main {
 		System.out.println("Doctor 1 name is "+d1.name);
 		System.out.println("Doctor 2 name is "+d2.name);
 		
-		d1.examinePatient();
+		Patient pat1 = new Patient();
+		pat1.name = "Sharma";
+		
+		d1.examinePatient(pat1);
 		
 		//Conditionals Demo (Flow Control)
 		

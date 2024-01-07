@@ -1,0 +1,6 @@
+challenge: Enhance your doctor class to have a method daysToRecover(String patientType)
+
+for patientType is "A" then days to recover is 10
+for patientType is "B" then days to recover is 20
+for patientType is "C" then days to recover is 30
+for patientType is "D" then days to recover is 50
