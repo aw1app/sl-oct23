@@ -62,12 +62,19 @@ public class FlowControlDemo {
 			i++;
 		};
 		
-		System.out.println("\n\n DO-WHILE-LOOP DEMO-2\n");
-		int j = 15;
+		System.out.println("\n\n DO-WHILE-LOOP DEMO-1\n");
+		int j = 1;
 		do {
-			System.out.println(j * j);
+			System.out.println("j square = "+ j * j);
 			j++;
 		}while (j <= 10);
+		
+		System.out.println("\n\n DO-WHILE-LOOP DEMO-2\n");
+		int k = 15;
+		do {
+			System.out.println("k square = "+k * k);
+			k++;
+		}while (k <= 10);
 
 	}
 
