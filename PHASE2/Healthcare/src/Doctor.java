@@ -10,6 +10,8 @@ public class Doctor {
 	String designation;
 	boolean isOnDuty;
 	
+	double chargePerVisit=100;
+	
 	{
 		int s=100;
 	}
@@ -33,6 +35,10 @@ public class Doctor {
 	void prescribeMedicine() {
 		System.out.println("Inside prescribeMedicine method.");
 		//System.out.println(s);
+	}
+	
+	public double calculateBill(int noOfVisits) {
+		return chargePerVisit*noOfVisits;
 	}
 
 }
