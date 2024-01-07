@@ -18,9 +18,13 @@ public class Main {
 		
 		d1.examinePatient();
 		
+		//Conditionals Demo (Flow Control)
+		
 		if (d1.age < d2.age) {
 		//....	
 			System.out.println("Doctor 1  is junior to Dctor 2");
+			//if() { }else {};
+			
 		}else if (d1.age > d2.age) {
 			System.out.println("Doctor 1  is senior to Dctor 2");
 		}else {
