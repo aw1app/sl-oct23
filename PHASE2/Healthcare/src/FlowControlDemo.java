@@ -39,6 +39,8 @@ public class FlowControlDemo {
 		for (int i = 1; i <= 10; i=i+2) {
 			System.out.println(i * i);
 		}
+		
+		//CHALLENGE-1: Req- Print cubes of even numbers b/w 5 to 10;
 
 	}
 
