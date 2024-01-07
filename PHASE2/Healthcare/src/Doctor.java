@@ -17,7 +17,13 @@ public class Doctor {
 	
 
 	// operations or methods
-
+	
+	/*
+	This is a multi-line comment that
+	can be used
+	to provide detailed explanations for
+	a block of code
+	*/
 	void examinePatient() {
 		int x=10; // local scoped varibles
 		System.out.println("Inside examinePatient method.");

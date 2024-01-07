@@ -17,6 +17,15 @@ public class Main {
 		System.out.println("Doctor 2 name is "+d2.name);
 		
 		d1.examinePatient();
+		
+		if (d1.age < d2.age) {
+		//....	
+			System.out.println("Doctor 1  is junior to Dctor 2");
+		}else if (d1.age > d2.age) {
+			System.out.println("Doctor 1  is senior to Dctor 2");
+		}else {
+			System.out.println("Doctor 1  and Dctor 2 have same seniority");
+		}
 
 	}
 
