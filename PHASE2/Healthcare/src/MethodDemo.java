@@ -1,3 +1,4 @@
+import people.Doctor;
 
 public class MethodDemo {
 

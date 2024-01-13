@@ -1,3 +1,5 @@
+import people.Doctor;
+import people.Patient;
 
 public class Main {
 
