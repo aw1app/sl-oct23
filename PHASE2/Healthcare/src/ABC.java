@@ -9,6 +9,8 @@ public final class ABC {
 
 }
 
+// above class is final. No one can extend a final class like below.
+
 //class XYZ extends ABC {
 //
 ////	void m1() {
