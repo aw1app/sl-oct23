@@ -13,7 +13,7 @@ public class Doctor {
 	String designation;
 	boolean isOnDuty;
 
-	private Date dateOfBirth;
+	final private Date dateOfBirth=null;
 
 	static int noOfWorkingDays = 250;
 
