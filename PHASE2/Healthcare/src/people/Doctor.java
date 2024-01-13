@@ -13,7 +13,7 @@ public class Doctor {
 	String designation;
 	boolean isOnDuty;
 
-	final private Date dateOfBirth=null;
+	final private Date dateOfBirth = null;
 
 	static int noOfWorkingDays = 250;
 
@@ -22,6 +22,20 @@ public class Doctor {
 	{
 		int s = 100;
 	}
+
+	public Doctor() {
+
+	}
+
+	public Doctor(String name) {
+		this.name=name;
+	}
+	
+	public Doctor(String name,float age) {
+		this.name=name;
+		this.age=age;
+	}
+
 
 	// operations or methods
 
@@ -54,7 +68,7 @@ public class Doctor {
 	}
 
 	public void setAge(float f) {
-		this.age=age;
+		this.age = age;
 	}
 
 	void promoteToNextGrade() {
