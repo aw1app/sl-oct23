@@ -4,3 +4,8 @@ for patientType is "A" then days to recover is 10
 for patientType is "B" then days to recover is 20
 for patientType is "C" then days to recover is 30
 for patientType is "D" then days to recover is 50
+
+13-JAN-24
+Define one interface you think is appropriate in this healthcare project, that has a method that takes a String argument.
+Then a class, that implements this interface.
+Then a demo class that creates one object of the above class and invokes that method. 
