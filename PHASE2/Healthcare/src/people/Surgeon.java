@@ -1,3 +1,4 @@
+package people;
 
 public class Surgeon extends Doctor{
 	int surgeonId;
@@ -6,4 +7,7 @@ public class Surgeon extends Doctor{
 	void doSurgery(Patient p){
 		
 	}
+
+
+	
 }

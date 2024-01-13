@@ -1,3 +1,4 @@
+package people;
 
 public abstract class FrontDeskStaff {
 	
