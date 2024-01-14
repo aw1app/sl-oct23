@@ -27,3 +27,18 @@ class DoctorToday implements DoctorAvailable {
         dr.display();
     }
 } 
+
+
+14-JAN-24
+//CHALENGE: Display a list of doctors, whose age is > 30
+
+System.out.println("List of Doctors in this hospital:");
+		for(Doctor d: listOfDoctors) {
+			System.out.printf(" %s  %s \n" ,d.name, d.getAge>30());
+			
+			
+			for(Doctor d: listOfDoctors){
+	   if(d.age >=30){
+	   System.out.println("%s %s \n", d.name d.age);
+	   }
+       }
