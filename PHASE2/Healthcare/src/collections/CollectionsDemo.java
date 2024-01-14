@@ -41,7 +41,9 @@ public class CollectionsDemo {
 		System.out.println("List of Doctors in this hospital:");
 		for(Doctor d: listOfDoctors) {
 			System.out.printf(" %s  %s \n" ,d.name, d.getAge());
-		}
+		};
+		
+		//CHALENGE: Display a list of doctors, whose age is > 30
 		
 	}
 
