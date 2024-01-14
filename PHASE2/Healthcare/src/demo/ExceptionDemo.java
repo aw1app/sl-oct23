@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ExceptionDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 //		Scanner sc = new Scanner(System.in);
 //
 //		System.out.println(" Enter the plot size  ");
@@ -23,8 +23,11 @@ public class ExceptionDemo {
 
 		String readmeFilePath = "F:\\Users\\home\\git\\sl-oct23\\README.mdgrgrrtr";
 		FileReader fr = null;
-
 		
+		fr = new FileReader(readmeFilePath);
+		fr.read();
+
+		/*
 		try {
 			fr = new FileReader(readmeFilePath);
 			fr.read();
@@ -36,8 +39,10 @@ public class ExceptionDemo {
 			System.out.println("Inside IOException catch block");
 			System.out.println(e.getMessage());
 		}
+		*/
 		
 		System.out.println(" Thank you  ");
+		
 
 	}
 
