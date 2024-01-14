@@ -28,14 +28,13 @@ public class Doctor {
 	}
 
 	public Doctor(String name) {
-		this.name=name;
-	}
-	
-	public Doctor(String name,float age) {
-		this.name=name;
-		this.age=age;
+		this.name = name;
 	}
 
+	public Doctor(String name, float age) {
+		this.name = name;
+		this.age = age;
+	}
 
 	// operations or methods
 
@@ -43,7 +42,10 @@ public class Doctor {
 	 * This is a multi-line comment that can be used to provide detailed
 	 * explanations for a block of code
 	 */
-	public void examinePatient(Patient pat) {
+	public void examinePatient(Patient pat) throws DoctorNotAvailableException{
+		if (this.isOnDuty == false)
+			throw new DoctorNotAvailableException("Doctor on Leave");
+
 		int x = 10; // local scoped varibles
 		System.out.println("Inside examinePatient method.");
 		System.out.println("Examining " + pat.name);

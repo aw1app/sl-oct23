@@ -1,4 +1,5 @@
 import people.Doctor;
+import people.DoctorNotAvailableException;
 import people.Patient;
 
 public class Main {
@@ -21,7 +22,11 @@ public class Main {
 		Patient pat1 = new Patient();
 		//pat1.name = "Sharma"; // access modifier error
 		
-		d1.examinePatient(pat1);
+		try {
+			d1.examinePatient(pat1);
+		} catch (DoctorNotAvailableException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		//Conditionals Demo (Flow Control)
 		

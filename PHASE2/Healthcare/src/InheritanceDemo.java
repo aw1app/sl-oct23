@@ -1,3 +1,4 @@
+import people.DoctorNotAvailableException;
 import people.Patient;
 import people.Surgeon;
 
@@ -14,7 +15,11 @@ public class InheritanceDemo {
 		
 		
 		Patient p1= new Patient();
-		s1.examinePatient(p1);
+		try {
+			s1.examinePatient(p1);
+		} catch (DoctorNotAvailableException e) {
+			System.out.println("Reason the surgeon not available :  "+ e.getMessage());
+		}
 
 	}
 
