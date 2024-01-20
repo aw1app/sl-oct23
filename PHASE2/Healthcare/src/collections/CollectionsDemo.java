@@ -11,30 +11,75 @@ public class CollectionsDemo {
 		// demoList();
 
 		// demoHashSet();
-		//demoTreeSet();
-		demoPriorityQueue();
+		// demoTreeSet();
+		//demoPriorityQueue1();
+		//demoPriorityQueue2();
+		demoPriorityQueue3();
 	}
 
-	public static void demoPriorityQueue() {
-		
+	public static void demoPriorityQueue3() {
+
 		// Creating a PriorityQueue
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>();
+		PriorityQueue<String> priorityQueue = new PriorityQueue<String>( (s1,s2) -> Integer.compare(s1.length(),s2.length()) );
 
-        // Adding elements to the PriorityQueue
-        priorityQueue.add(30);
-        priorityQueue.add(20);
-        priorityQueue.add(40);
-        priorityQueue.add(10);
+		// Adding elements to the PriorityQueue		
+		priorityQueue.add("Orange");
+		priorityQueue.add("Pear");
+		priorityQueue.add("Apple");
+		priorityQueue.add("Banana");
 
-        System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+		System.out.println("Elements in the PriorityQueue: " + priorityQueue);
 
-        // Removing elements from the PriorityQueue
-        while (!priorityQueue.isEmpty()) {
-            System.out.println("Polling element: " + priorityQueue.poll());
-            System.out.println("Elements in the PriorityQueue: " + priorityQueue);
-        }
-		
+		// Removing elements from the PriorityQueue
+		while (!priorityQueue.isEmpty()) {
+			System.out.println("Polling element: " + priorityQueue.poll());
+			System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+		}
+
 	}
+	
+	public static void demoPriorityQueue2() {
+
+		// Creating a PriorityQueue
+		PriorityQueue<String> priorityQueue = new PriorityQueue<String>();
+
+		// Adding elements to the PriorityQueue
+		priorityQueue.add("Pear");
+		priorityQueue.add("Apple");
+		priorityQueue.add("Banana");		
+		priorityQueue.add("Orange");
+
+		System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+
+		// Removing elements from the PriorityQueue
+		while (!priorityQueue.isEmpty()) {
+			System.out.println("Polling element: " + priorityQueue.poll());
+			System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+		}
+
+	}
+
+	public static void demoPriorityQueue1() {
+
+		// Creating a PriorityQueue
+		PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>();
+
+		// Adding elements to the PriorityQueue
+		priorityQueue.add(30);
+		priorityQueue.add(20);
+		priorityQueue.add(40);
+		priorityQueue.add(10);
+
+		System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+
+		// Removing elements from the PriorityQueue
+		while (!priorityQueue.isEmpty()) {
+			System.out.println("Polling element: " + priorityQueue.poll());
+			System.out.println("Elements in the PriorityQueue: " + priorityQueue);
+		}
+
+	}
+
 	public static void demoTreeSet() {
 
 		TreeSet<Integer> setOfDoctorsAge = new TreeSet<Integer>();
@@ -50,10 +95,10 @@ public class CollectionsDemo {
 		while (it.hasNext()) {
 			Integer d = it.next();
 			System.out.println(d);
-		};
-		
-		
-		System.out.printf("Last element in the treeset %s \n ",setOfDoctorsAge.last() );
+		}
+		;
+
+		System.out.printf("Last element in the treeset %s \n ", setOfDoctorsAge.last());
 	}
 
 	public static void demoHashSet() {
