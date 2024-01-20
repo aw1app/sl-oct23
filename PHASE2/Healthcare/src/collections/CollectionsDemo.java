@@ -1,6 +1,5 @@
 package collections;
 
-import java.util.ArrayList;
 import java.util.*;
 
 import people.Doctor;
@@ -15,8 +14,37 @@ public class CollectionsDemo {
 		//demoPriorityQueue1();
 		//demoPriorityQueue2();
 		//demoPriorityQueue3();
-		demoHashMap() ;
+		//demoHashMap() ;
+		demoHashTable();
 	}
+	
+	public static void demoHashTable() {
+		Map<Integer,Doctor> doctorMappedbyId = new Hashtable<Integer, Doctor>();
+		
+		Doctor d1 = new Doctor(1,"Ramesh", 24);		
+		Doctor d2 = new Doctor(7,"Tom", 24);
+		Doctor d3 = new Doctor(6,"Palak", 27);
+		Doctor d4 = new Doctor(4,"Baba", 33);
+
+		doctorMappedbyId.put(d1.id, d1);
+		doctorMappedbyId.put(d2.id, d2);
+		doctorMappedbyId.put(d3.id, d3);		
+		doctorMappedbyId.put(d4.id, d4);
+		
+		// we can now do a search based on the id.
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please enter the ID of doctor whose details you want see: ");
+		int id = sc.nextInt();
+		
+		Doctor d  = doctorMappedbyId.get(id);
+		if(d!=null) {
+			System.out.printf("ID %s, Name %s , Age %s \n",d.id, d.name, d.getAge());
+		}else {
+			System.out.printf("No such doctor with id %s \n", id);
+		}
+		
+	}
+	
 
 	public static void demoHashMap() {
 		Map<Integer,Doctor> doctorMappedbyId = new HashMap<Integer, Doctor>();
