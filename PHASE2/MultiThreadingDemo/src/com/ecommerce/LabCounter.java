@@ -12,6 +12,7 @@ public class LabCounter implements Runnable{
 		for (int i = 0; i < 10; i++) {
 			System.out.printf("[%s ] Calling Patient No %s, please report to the LAB \n",Thread.currentThread().getName(), i );
 			
+			try {Thread.sleep(10);} catch (Exception e) {};			
 		}
 
 	}

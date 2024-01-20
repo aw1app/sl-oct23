@@ -17,13 +17,21 @@ public class FrontDeskCounter extends Thread {
 		for (int i = 0; i < 10; i++) {
 			System.out.printf("[In I-Loop %s ] Calling Patient No %s, please report to the reception \n",
 					Thread.currentThread().getName(), i);
+			
+			try {Thread.sleep(10);} catch (Exception e) {};
+
 		}
 
-		synchronized (doctor) {
+		// Only one thread can be
+		// inside the synchronized block
+		synchronized (doctor)
+
+		{
 
 			for (int j = 0; j < 10; j++) {
 				System.out.printf("[In J Loop %s ] Calling Patient No %s, please report to the reception \n",
 						Thread.currentThread().getName(), j);
+				try {Thread.sleep(10);} catch (Exception e) {};
 			}
 
 		}
