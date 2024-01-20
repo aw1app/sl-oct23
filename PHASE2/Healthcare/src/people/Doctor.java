@@ -5,7 +5,7 @@ import java.util.Date;
 public class Doctor {
 
 	// attributes (non local scoped variables)
-	int id;
+	public int id;
 	public String name;
 	protected float age;
 
@@ -32,6 +32,12 @@ public class Doctor {
 	}
 
 	public Doctor(String name, float age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	public Doctor(int id, String name, float age) {
+		this.id=id;
 		this.name = name;
 		this.age = age;
 	}

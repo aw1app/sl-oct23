@@ -14,13 +14,41 @@ public class CollectionsDemo {
 		// demoTreeSet();
 		//demoPriorityQueue1();
 		//demoPriorityQueue2();
-		demoPriorityQueue3();
+		//demoPriorityQueue3();
+		demoHashMap() ;
 	}
 
+	public static void demoHashMap() {
+		Map<Integer,Doctor> doctorMappedbyId = new HashMap<Integer, Doctor>();
+		
+		Doctor d1 = new Doctor(1,"Ramesh", 24);		
+		Doctor d2 = new Doctor(7,"Tom", 24);
+		Doctor d3 = new Doctor(6,"Palak", 27);
+		Doctor d4 = new Doctor(4,"Baba", 33);
+
+		doctorMappedbyId.put(d1.id, d1);
+		doctorMappedbyId.put(d2.id, d2);
+		doctorMappedbyId.put(d3.id, d3);		
+		doctorMappedbyId.put(d4.id, d4);
+		
+		// we can now do a search based on the id.
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please enter the ID of doctor whose details you want see: ");
+		int id = sc.nextInt();
+		
+		Doctor d  = doctorMappedbyId.get(id);
+		if(d!=null) {
+			System.out.printf("ID %s, Name %s , Age %s \n",d.id, d.name, d.getAge());
+		}else {
+			System.out.printf("Nos such doctor with id %s \n", id);
+		}
+		
+	}
+	
 	public static void demoPriorityQueue3() {
 
 		// Creating a PriorityQueue
-		PriorityQueue<String> priorityQueue = new PriorityQueue<String>( (s1,s2) -> Integer.compare(s1.length(),s2.length()) );
+		Queue<String> priorityQueue = new PriorityQueue<String>( (s1,s2) -> Integer.compare(s1.length(),s2.length()) );
 
 		// Adding elements to the PriorityQueue		
 		priorityQueue.add("Orange");
