@@ -40,7 +40,7 @@ public class CollectionsDemo {
 		if(d!=null) {
 			System.out.printf("ID %s, Name %s , Age %s \n",d.id, d.name, d.getAge());
 		}else {
-			System.out.printf("Nos such doctor with id %s \n", id);
+			System.out.printf("No such doctor with id %s \n", id);
 		}
 		
 	}
