@@ -1,8 +1,6 @@
 package com.ecommerce;
 
-public class FrontDeskCounter extends Thread {
-
-	
+public class LabCounter implements Runnable{
 	
 	@Override
 	public void run() {
@@ -12,7 +10,7 @@ public class FrontDeskCounter extends Thread {
 		// which the token numbers of the patients waiting
 
 		for (int i = 0; i < 10; i++) {
-			System.out.printf("[%s ] Calling Patient No %s, please report to the reception \n",Thread.currentThread().getName(), i );
+			System.out.printf("[%s ] Calling Patient No %s, please report to the LAB \n",Thread.currentThread().getName(), i );
 			
 		}
 

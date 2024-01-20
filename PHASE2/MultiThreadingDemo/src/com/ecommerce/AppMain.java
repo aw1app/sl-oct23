@@ -15,6 +15,11 @@ public class AppMain {
 		
 		counter2.start();
 		
+		LabCounter labCounterObj1 = new LabCounter();
+		Thread labCounter1 = new Thread(labCounterObj1);
+		labCounter1.setName("Lab counter 1");
+		labCounter1.start();
+		
 		
 		for (int i = 0; i < 10; i++) {
 			System.out.printf("Inside main thread i=%s \n", i );			
