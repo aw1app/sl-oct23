@@ -10,7 +10,7 @@ public class CallAppMain {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 
-		Callable<String> myCallable = new MyCallable();
+		Callable<String> myCallable = new MyCallable();		
 
 		ExecutorService executor = Executors.newFixedThreadPool(1);
 
@@ -20,7 +20,8 @@ public class CallAppMain {
 			System.out.printf("Inside main thread i=%s \n", i);
 		}
 
-		System.out.println(" Got a result from myCallable : " + futureResult.get());
+		System.out.println(" Got a result from myCallable : "
+		+ futureResult.get());
 
 	}
 
