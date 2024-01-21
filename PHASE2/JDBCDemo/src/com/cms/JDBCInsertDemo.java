@@ -52,22 +52,22 @@ public class JDBCInsertDemo {
 				System.out.println("session_name:");
 				String session_name = sc.next();
 
+				String sqlCommand = "INSERT INTO STUDENTS("
+						+ "student_id, first_name, last_name, date_of_birth, enrollment_date, session_name)"
+						+ " VALUES( " + id + ", '" + first_name + "','" + last_name + "','" + date_of_birth + "','"
+						+ enrollment_date + "','" + session_name + "')";
+
+				int noOfRowsInserted = stmt.executeUpdate(sqlCommand);
+
+				// step-5
+				System.out.println("Inserted " + noOfRowsInserted + " row(s) successfully!");
+
 				System.out.println("Insert another row?: Y / N :");
 				String answer = sc.next();
 				if (!answer.equalsIgnoreCase("Y"))
 					break;
 			}
 			sc.close();
-
-			String sqlCommand = "INSERT INTO STUDENTS("
-					+ "student_id, first_name, last_name, date_of_birth, enrollment_date, session_name)" + " VALUES( "
-					+ id + ", '" + first_name + "','" + last_name + "','" + date_of_birth + "','" + enrollment_date
-					+ "','" + session_name + "')";
-
-			int noOfRowsInserted = stmt.executeUpdate(sqlCommand);
-
-			// step-5
-			System.out.println("Inserted " + noOfRowsInserted + " row(s) successfully!");
 
 			// CHALLENGE: Take the new row values like id, first_name . etc from command
 			// line
