@@ -1,6 +1,7 @@
 package com.cms;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class JDBCInsertDemo {
 
@@ -37,15 +38,32 @@ public class JDBCInsertDemo {
 			Statement stmt = connection.createStatement();
 			
 			//step-4
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Id:");
+			int id = sc.nextInt();
+			System.out.println("first_name:");
+			String first_name = sc.next();
+			System.out.println("last_name:");
+			String last_name = sc.next();
+			System.out.println("date_of_birth");
+			String date_of_birth = sc.next();
+			System.out.println("enrollment_date:");
+			String enrollment_date = sc.next();
+			System.out.println("session_name:");
+			String session_name = sc.next();
+			sc.close();
+			
 			String sqlCommand = "INSERT INTO STUDENTS("
 					+ "student_id, first_name, last_name, date_of_birth, enrollment_date, session_name)"
-					+ " VALUES(10, 'Sri','Vidya','1995-03-15','1999-03-25','Chemistry')";
+					+ " VALUES( " + id + ", '"+ first_name + "','" + last_name  + "','"+ date_of_birth + "','"+enrollment_date +"','" +session_name+"')";
 			
 			int noOfRowsInserted  = stmt.executeUpdate(sqlCommand);
 			
 			//step-5
 			System.out.println("Inserted "+noOfRowsInserted + " row(s) successfully!");			
 			
+			//CHALLENGE: Take the new row values like id, first_name . etc from command line
+			// and then insert the row.
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
