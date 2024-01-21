@@ -31,6 +31,38 @@ public class JDBCQueryDemo {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
+		
+		
+		try {
+			//step-3
+			Statement stmt = connection.createStatement();
+			
+			//step-4
+			ResultSet resultSet  = stmt.executeQuery("SELECT * FROM STUDENTS");
+			
+			//step-5
+			while(resultSet.next()) {
+				int id  = resultSet.getInt("student_id");
+				String first_name  = resultSet.getString("first_name");
+				String lastName = resultSet.getString("last_name");
+	            String dateOfBirth = resultSet.getString("date_of_birth");
+	            String enrollmentDate = resultSet.getString("enrollment_date");
+	            String session_name = resultSet.getString("session_name");
+	            
+	            System.out.println("Student ID: " + id +
+	                    ", Name: " + first_name + " " + lastName +
+	                    ", Date of Birth: " + dateOfBirth +
+	                    ", Enrollment Date: " + enrollmentDate +
+	                    ", Session Name: " + session_name
+	                    );
+	            
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
