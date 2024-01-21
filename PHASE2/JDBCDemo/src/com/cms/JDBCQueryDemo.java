@@ -41,6 +41,7 @@ public class JDBCQueryDemo {
 			ResultSet resultSet  = stmt.executeQuery("SELECT * FROM STUDENTS");
 			
 			//step-5
+			
 			while(resultSet.next()) {
 				int id  = resultSet.getInt("student_id");
 				String first_name  = resultSet.getString("first_name");
@@ -49,9 +50,9 @@ public class JDBCQueryDemo {
 	            String enrollmentDate = resultSet.getString("enrollment_date");
 	            String session_name = resultSet.getString("session_name");
 	            
-	            System.out.println("Student ID: " + id +
+	            System.out.println(" ID: " + id +
 	                    ", Name: " + first_name + " " + lastName +
-	                    ", Date of Birth: " + dateOfBirth +
+	                    ", DOB: " + dateOfBirth +
 	                    ", Enrollment Date: " + enrollmentDate +
 	                    ", Session Name: " + session_name
 	                    );
