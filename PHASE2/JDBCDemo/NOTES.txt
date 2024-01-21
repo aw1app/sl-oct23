@@ -1,0 +1,17 @@
+use CMS;
+CREATE TABLE STUDENTS (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    enrollment_date DATE,
+    session_name VARCHAR(50)
+);
+
+use CMS;
+INSERT INTO STUDENTS (student_id, first_name, last_name, date_of_birth, enrollment_date, session_name)
+VALUES
+  (1, 'John', 'Doe', '1995-03-15', '2018-09-01', 'Computer Science'),
+  (2, 'Jane', 'Smith', '1998-07-22', '2019-01-15', 'Mathematics'),
+  (3, 'Alice', 'Johnson', '1997-05-10', '2017-08-20', 'Physics'),
+  (4, 'Bob', 'Williams', '1996-11-28', '2020-02-10', 'Engineering');

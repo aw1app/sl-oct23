@@ -44,6 +44,13 @@ public class PredicateNotDemo {
 		if(answer.isPresent())
 		System.out.println( answer.get());
 		
+		//Arrange numbers1 according the negative thier values
+		System.out.println( "\n Demo custom comparision  map " );
+		List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5); //
+				Optional<Integer> answer1 = numbers1.stream().max( (i1,i2) -> i2-i1  );
+				if(answer1.isPresent())
+				System.out.println( answer1.get());
+		
 		
 		System.out.println( "\n Demo Stream map " );
 		List<String> list = Arrays.asList("hello", "world");
@@ -68,7 +75,7 @@ public class PredicateNotDemo {
 		listOfDoctors.add(d5);
 		
 		 List<Doctor> doctorsWithAgeLT33 = listOfDoctors.stream()
-	                .filter(doctor -> doctor.getAge() >33)
+	                .filter( (var doctor) -> doctor.getAge() >33)
 	                .collect(Collectors.toList());
 		 
 		 doctorsWithAgeLT33.stream().forEach(doctor -> System.out.printf("Name %s, Age %s \n",doctor.name, doctor.getAge()));
