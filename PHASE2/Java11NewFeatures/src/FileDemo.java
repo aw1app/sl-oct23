@@ -9,6 +9,7 @@ public class FileDemo {
 		String countryFile = "F:\\Users\\home\\git\\sl-oct23\\PHASE2\\Java11NewFeatures\\countries.txt";
 		Path path = Path.of(countryFile);
 
+		// Reading all content in one statement
 		try {
 			String content = Files.readString(path);
 
@@ -20,9 +21,9 @@ public class FileDemo {
 
 		// Writing all content in one statement
 		String someText = "Hello \n Today \n is \n Sunday";
+		String baseFolder = "F:\\Users\\home\\git\\sl-oct23\\PHASE2\\Java11NewFeatures";
 		try {
-			Files.writeString(Path.of("F:\\Users\\home\\git\\sl-oct23\\PHASE2\\Java11NewFeatures\\countries2.txt"),
-					someText);
+			Files.writeString(Path.of(baseFolder,"countries2.txt"),	someText);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
