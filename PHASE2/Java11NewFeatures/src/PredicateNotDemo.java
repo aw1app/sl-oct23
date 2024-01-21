@@ -28,13 +28,26 @@ public class PredicateNotDemo {
 
 		// filtering the odd number using odd predicate
 		List<Integer> oddNumbers = numbers.stream().filter(odd).collect(Collectors.toList());
+		
+		// filtering the odd number using odd predicate
+				List<Integer> numbersDivBy5 = numbers.stream().filter( i -> i%5 == 0).collect(Collectors.toList());
+				
 		// Print the Lists
 		System.out.println(evenNumbers);
 		System.out.println(oddNumbers);
+		System.out.println(numbersDivBy5);
 		
+		//Stream can also help us finding max of a list. min too.
+		// Math.max is only for two numbers!
 		Optional<Integer> answer = numbers.stream().max( (i1,i2) -> Integer.compare(i1, i2) );
 		if(answer.isPresent())
 		System.out.println( answer.get());
+		
+		
+		System.out.println( "\n Demo Stream map " );
+		List<String> list = Arrays.asList("hello", "world");
+		String combinedStr = list.stream().map( element -> element.toUpperCase() ).collect(Collectors.joining(", "));
+		System.err.println(combinedStr);
 	}
 
 }
