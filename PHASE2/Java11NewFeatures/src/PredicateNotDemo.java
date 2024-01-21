@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -48,6 +49,29 @@ public class PredicateNotDemo {
 		List<String> list = Arrays.asList("hello", "world");
 		String combinedStr = list.stream().map( element -> element.toUpperCase() ).collect(Collectors.joining(", "));
 		System.err.println(combinedStr);
+		
+		//Challenge: Create a list of 5 doctors (having id, name and age);
+		// Use Stream API, to write a one liner that displays only those doctors whose age is > 33 
+		System.out.println( "\n Demo Challenge:  displays only those doctors whose age is > 33" );
+		ArrayList<Doctor> listOfDoctors = new ArrayList<Doctor>();
+
+		Doctor d1 = new Doctor("Shasi1", 34);
+		Doctor d2 = new Doctor("Shasi2", 24);
+		Doctor d3 = new Doctor("Shasi3", 27);
+		Doctor d4 = new Doctor("Shasi4", 33.5F);
+		Doctor d5 = new Doctor("Shasi5", 36);
+
+		listOfDoctors.add(d1);
+		listOfDoctors.add(d2);
+		listOfDoctors.add(d3);
+		listOfDoctors.add(d4);
+		listOfDoctors.add(d5);
+		
+		 List<Doctor> doctorsWithAgeLT33 = listOfDoctors.stream()
+	                .filter(doctor -> doctor.getAge() >33)
+	                .collect(Collectors.toList());
+		 
+		 doctorsWithAgeLT33.stream().forEach(doctor -> System.out.printf("Name %s, Age %s \n",doctor.name, doctor.getAge()));
 	}
 
 }
