@@ -40,6 +40,7 @@ public class JDBCInsertUsingPrepapedStatementDemo {
 			
 			
 			Scanner sc = new Scanner(System.in);
+			System.out.println("INSERT DEMO USING PreparedStatement:\n\n");
 			while (true) {
 				System.out.println("Id:");
 				int id = sc.nextInt();
@@ -65,14 +66,13 @@ public class JDBCInsertUsingPrepapedStatementDemo {
 
 				int noOfRowsInserted = pStmt.executeUpdate();
 				pStmt.clearParameters();
-
+				
 				// step-5
 				System.out.println("Inserted " + noOfRowsInserted + " row(s) successfully!");
 
 				System.out.println("Insert another row?: Y / N :");
 				String answer = sc.next();
-				if (!answer.equalsIgnoreCase("Y"))
-					break;
+				if (!answer.equalsIgnoreCase("Y"))					break;
 			}
 			sc.close();		
 			
