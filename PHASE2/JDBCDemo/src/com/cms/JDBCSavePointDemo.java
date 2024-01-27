@@ -86,18 +86,12 @@ public class JDBCSavePointDemo {
 				if (!answer.equalsIgnoreCase("Y"))
 					break;
 				
-				//Below savepoint is created when the record no 3 is created here.
+				//Below savepoint is created when the record no 3 is created.
 				if(rowCounter==4)
 				savePoint1 = connection.setSavepoint("Savepoint1");
 			}
 			sc.close();
-
-			// step-5 (execution of the batch)
 			
-
-			
-			
-
 		} catch (SQLException e) {
 			System.out.println("Inside Excption block for save point demo");
 			try {
@@ -106,8 +100,18 @@ public class JDBCSavePointDemo {
 				// Any further valid values records ( record no 4,5,6... onwards) will be removed 
 				// from the db
 				connection.rollback(savePoint1);
+				
+				// One SQLException can have many other SQLExceptions embedded inside it.
+				// Retrieve all the SQLException objects that caused this error condition.
+				while(e.getNextException()!=null) {
+					System.out.println(e.getErrorCode());
+				}
+				
 			} catch (SQLException e1) {
 
+				while(e1.getNextException()!=null) {
+					System.out.println(e1.getErrorCode());
+				}
 			}
 		} 
 
