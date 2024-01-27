@@ -1,6 +1,7 @@
 package com.cms;
 
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JDBCBatchInsertDemo {
@@ -35,6 +36,8 @@ public class JDBCBatchInsertDemo {
 		
 		try {
 			//step-3 
+			connection.setAutoCommit(false);
+			
 			PreparedStatement pStmt = connection.prepareStatement(
 					"INSERT INTO STUDENTS(student_id, first_name, last_name, date_of_birth, enrollment_date, session_name) VALUES(?,?,?,?,?,?)");
 			
@@ -63,19 +66,20 @@ public class JDBCBatchInsertDemo {
 				pStmt.setString(5, enrollment_date);
 				pStmt.setString(6, session_name);
 				
-
-				int noOfRowsInserted = pStmt.executeUpdate();
-				pStmt.clearParameters();
-				
-				// step-5
-				System.out.println("Inserted " + noOfRowsInserted + " row(s) successfully!");
+				pStmt.addBatch();				
 
 				System.out.println("Insert another row?: Y / N :");
 				String answer = sc.next();
-				if (!answer.equalsIgnoreCase("Y"))					break;
+				if (!answer.equalsIgnoreCase("Y"))	break;
 			}
-			sc.close();		
+			sc.close();	
 			
+			// step-5 (execution of the batch)
+			int[] noOfRowsInserted = pStmt.executeBatch();
+			connection.commit();
+			
+			System.out.println("Inserted " + Arrays.toString(noOfRowsInserted) + " row(s) successfully!");
+			pStmt.clearBatch();			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
