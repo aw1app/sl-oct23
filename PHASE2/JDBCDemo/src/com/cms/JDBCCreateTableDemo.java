@@ -16,8 +16,8 @@ public class JDBCCreateTableDemo {
 		// STEP 1: Loading the JDBC Driver
 		// STEP 2: Create a Connection
 		// STEP 3: Create a Statement
-		// STEP 4: Execute the Statement (Insert)
-		// STEP 5: Display the successful insert message
+		// STEP 4: Execute the Statement (execute)
+		// STEP 5: Display the successful table creation message
 
 		Connection connection = null;
 
@@ -37,27 +37,13 @@ public class JDBCCreateTableDemo {
 			Statement stmt = connection.createStatement();
 
 			// step-4
-			Scanner sc = new Scanner(System.in);
-			while (true) {
-				
-				System.out.println("ENTER row(student_id) delete? Enter -1 to quit :");				
-				int id = sc.nextInt();
-				
-				if(id==-1)break;				
-				
-				String sqlCommand = "DELETE FROM STUDENTS where student_id="+ id;
+			
+				String sqlCommand = "CREATE TABLE instructors(id int,first_name varchar(80)) ";
 
-				int noOfRowsDeleted = stmt.executeUpdate(sqlCommand);
-
-				// step-5
-				System.out.println("Deleted " + noOfRowsDeleted + " row(s) successfully!");
-
-				System.out.println("Delete another row?: Y / N :");
-				String answer = sc.next();
-				if (!answer.equalsIgnoreCase("Y"))
-					break;
-			}
-			sc.close();
+				stmt.execute(sqlCommand);
+				
+				System.out.println("Created table successfully!");				
+			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
