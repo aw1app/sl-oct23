@@ -35,12 +35,13 @@ public class JDBCQueryUsingPrepaperStatementDemo {
 		
 		try {
 			//step-3 
-			PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM STUDENTS");
+			PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM STUDENTS where first_name=? or session_name=?");
 			
-			//step-4 (set the parmeters)
+			//step-4 (set the positional parameters)
+			pStmt.setString(1, "Tom");
+			pStmt.setString(2, "Chemistry");
 			
-			
-			ResultSet resultSet  = stmt.executeQuery("SELECT * FROM STUDENTS");
+			ResultSet resultSet  = pStmt.executeQuery();
 			
 			//step-5
 			
