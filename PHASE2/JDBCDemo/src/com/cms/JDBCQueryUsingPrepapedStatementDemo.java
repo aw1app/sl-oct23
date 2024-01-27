@@ -2,9 +2,9 @@ package com.cms;
 
 import java.sql.*;
 
-public class JDBCQueryUsingPrepaperStatementDemo {
+public class JDBCQueryUsingPrepapedStatementDemo {
 
-	public JDBCQueryUsingPrepaperStatementDemo() {
+	public JDBCQueryUsingPrepapedStatementDemo() {
 
 	}
 
@@ -35,9 +35,9 @@ public class JDBCQueryUsingPrepaperStatementDemo {
 		
 		try {
 			//step-3 
-			PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM STUDENTS where first_name=? or session_name=?");
+			PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM STUDENTS where first_name=? OR session_name=?");
 			
-			//step-4 (set the positional parameters)
+			//step-4 (set the positional parameters and execute the prep statement)
 			pStmt.setString(1, "Tom");
 			pStmt.setString(2, "Chemistry");
 			
