@@ -40,12 +40,9 @@ public class JDBCDeleteDemo {
 			
 				String sqlCommand = "CREATE TABLE instructors(id int,first_name varchar(80)) ";
 
-				boolean result  = stmt.execute(sqlCommand);
-
-				// step-5
-				if(result==false)
-				System.out.println("Created " + stmt.getUpdateCount() + " table(s) successfully!");			
-			
+				stmt.execute(sqlCommand);
+				
+				System.out.println("Created table successfully!");				
 			
 
 		} catch (SQLException e) {
