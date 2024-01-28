@@ -68,6 +68,9 @@ public class JDBCRowSetDemo {
                     ", Enrollment Date: " + enrollmentDate +
                     ", Session Name: " + session_name
                     );
+            
+            // Challenge: After going to the 3rd row How will display rows in the reverse order
+            
 
 		} catch (SQLException e) {
 
