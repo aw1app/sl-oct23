@@ -71,7 +71,7 @@ class MyListener implements RowSetListener {
 			System.out.println("Cursor Moved...to ID " + ( (RowSet) event.getSource() ).getInt("student_id")  + "\n");
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
