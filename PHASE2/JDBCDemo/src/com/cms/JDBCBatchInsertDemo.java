@@ -39,7 +39,7 @@ public class JDBCBatchInsertDemo {
 			
 			PreparedStatement pStmt = connection.prepareStatement(
 					"INSERT INTO STUDENTS(student_id, first_name, last_name, date_of_birth, enrollment_date, session_name) VALUES(?,?,?,?,?,?)");
-			
+			connection.setAutoCommit(false);
 			
 			Scanner sc = new Scanner(System.in);
 			System.out.println("INSERT DEMO USING PreparedStatement:\n\n");
