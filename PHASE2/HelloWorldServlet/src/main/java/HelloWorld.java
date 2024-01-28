@@ -11,11 +11,12 @@ public class HelloWorld extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 		
 		
-		out.println("Hello Everyone, again!");
+		out.println("<center><h1> Welcome to ZUMBA Coaching </h1></center>");
 		
 
 		out.close();
