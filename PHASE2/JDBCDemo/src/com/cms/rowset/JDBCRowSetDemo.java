@@ -98,21 +98,29 @@ public class JDBCRowSetDemo {
 			};
 			
 			// 
+//			System.out.println("\n\n ");
+//			System.out.println(" Inserting a new record \n ");
+//			
+//			jdbcRowSet.clearParameters();
+//			
+//			jdbcRowSet.moveToInsertRow();
+//			
+//			jdbcRowSet.updateInt("student_id", 20);
+//			jdbcRowSet.updateString("first_name", "A20");
+//			jdbcRowSet.updateString("last_name", "B20");
+//			jdbcRowSet.updateString("date_of_birth", "1999-01-01");
+//			jdbcRowSet.updateString("enrollment_date", "2024-01-01");
+//			jdbcRowSet.updateString("session_name", "ZUMBA");
+//			
+//			jdbcRowSet.insertRow();
+			
+			// Assuming that we want change first_name of 5th row
 			System.out.println("\n\n ");
-			System.out.println(" Inserting a new record \n ");
-			
-			jdbcRowSet.clearParameters();
-			
-			jdbcRowSet.moveToInsertRow();
-			
-			jdbcRowSet.updateInt("student_id", 20);
-			jdbcRowSet.updateString("first_name", "A20");
-			jdbcRowSet.updateString("last_name", "B20");
-			jdbcRowSet.updateString("date_of_birth", "1999-01-01");
-			jdbcRowSet.updateString("enrollment_date", "2024-01-01");
-			jdbcRowSet.updateString("session_name", "ZUMBA");
-			
-			jdbcRowSet.insertRow();
+			System.out.println(" Updating 5th record firstname to \n AAA20");
+			jdbcRowSet.absolute(5);
+			jdbcRowSet.moveToCurrentRow();
+			jdbcRowSet.updateString("first_name", "AAA20");
+			jdbcRowSet.updateRow();
 			
 
 		} catch (SQLException e) {
