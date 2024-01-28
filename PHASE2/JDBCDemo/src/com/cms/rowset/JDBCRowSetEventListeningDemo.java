@@ -1,18 +1,16 @@
 package com.cms.rowset;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.sql.RowSet;
+import javax.sql.RowSetEvent;
+import javax.sql.RowSetListener;
 import javax.sql.rowset.FilteredRowSet;
-import javax.sql.rowset.Predicate;
 import javax.sql.rowset.RowSetProvider;
 
-public class JDBCFilteredRowSetDemo {
+public class JDBCRowSetEventListeningDemo {
 
 	public static void main(String[] args) {
 
@@ -38,6 +36,8 @@ public class JDBCFilteredRowSetDemo {
 			filteredRowSet.setCommand("select * from students ");
 
 			filteredRowSet.execute();
+			
+			filteredRowSet.addRowSetListener(new MyListener());
 
 			System.out.println(" Fetch all rows (as obtained from the DB) \n \n");
 			while (filteredRowSet.next()) {
@@ -50,27 +50,7 @@ public class JDBCFilteredRowSetDemo {
 
 				System.out.println(" ID: " + id + ", Name: " + first_name + " " + lastName + ", DOB: " + dateOfBirth
 						+ ", Enrollment Date: " + enrollmentDate + ", Session Name: " + session_name);
-			};
-			
-
-			// Now position to the row before the first, so that we can navigate
-			// again from the first row
-			filteredRowSet.beforeFirst(); 
-			
-			filteredRowSet.setFilter(new NameStartWithAFilter());
-			
-			System.out.println(" Fetch all the filtered rows \n\n");
-			while (filteredRowSet.next()) {
-				int id = filteredRowSet.getInt("student_id");
-				String first_name = filteredRowSet.getString("first_name");
-				String lastName = filteredRowSet.getString("last_name");
-				String dateOfBirth = filteredRowSet.getString("date_of_birth");
-				String enrollmentDate = filteredRowSet.getString("enrollment_date");
-				String session_name = filteredRowSet.getString("session_name");
-
-				System.out.println(" ID: " + id + ", Name: " + first_name + " " + lastName + ", DOB: " + dateOfBirth
-						+ ", Enrollment Date: " + enrollmentDate + ", Session Name: " + session_name);
-			};
+			}
 
 			filteredRowSet.close();
 
@@ -79,35 +59,27 @@ public class JDBCFilteredRowSetDemo {
 			System.out.println("Inside SQLException block ");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
-		} 
+		}
 
 	}
 
 }
 
-class NameStartWithAFilter implements Predicate {
-
-	@Override
-	public boolean evaluate(RowSet rs) {
-
+class MyListener implements RowSetListener {
+	public void cursorMoved(RowSetEvent event) {
 		try {
-			
-			return rs.getString("first_name").startsWith("A");
-			
+			System.out.println("Cursor Moved...to ID " + ( (RowSet) event.getSource() ).getInt("student_id")  + "\n");
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
 		}
-		return false;
 	}
 
-	@Override
-	public boolean evaluate(Object value, int column) throws SQLException {
-		throw new UnsupportedOperationException();
+	public void rowChanged(RowSetEvent event) {
+		System.out.println("Cursor Changed...");
 	}
 
-	@Override
-	public boolean evaluate(Object value, String columnName) throws SQLException {
-		throw new UnsupportedOperationException();
+	public void rowSetChanged(RowSetEvent event) {
+		System.out.println("RowSet changed...");
 	}
-
 }
