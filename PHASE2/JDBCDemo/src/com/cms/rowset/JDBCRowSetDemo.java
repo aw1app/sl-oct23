@@ -102,18 +102,22 @@ public class JDBCRowSetDemo {
 			System.out.println(" Inserting a new record \n ");
 			
 			jdbcRowSet.clearParameters();
-			jdbcRowSet.setInt("student_id", 20);
-			jdbcRowSet.setString("first_name", "A20");
-			jdbcRowSet.setString("last_name", "B20");
-			jdbcRowSet.setString("date_of_birth", "1999-01-01");
-			jdbcRowSet.setString("enrollment_date", "2024-01-01");
-			jdbcRowSet.setString("session_name", "ZUMBA");
+			
+			jdbcRowSet.moveToInsertRow();
+			
+			jdbcRowSet.updateInt("student_id", 20);
+			jdbcRowSet.updateString("first_name", "A20");
+			jdbcRowSet.updateString("last_name", "B20");
+			jdbcRowSet.updateString("date_of_birth", "1999-01-01");
+			jdbcRowSet.updateString("enrollment_date", "2024-01-01");
+			jdbcRowSet.updateString("session_name", "ZUMBA");
 			
 			jdbcRowSet.insertRow();
 			
 
 		} catch (SQLException e) {
 			//e.printStackTrace();
+			System.out.println("Inside SQLException block ");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());			
 			
