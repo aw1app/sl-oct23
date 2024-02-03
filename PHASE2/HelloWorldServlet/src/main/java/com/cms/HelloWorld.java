@@ -1,3 +1,5 @@
+package com.cms;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,6 +13,7 @@ public class HelloWorld extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
