@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   
+  <!-- com.cms.HelloWorld servlet block START -->
+  
   <servlet>     
     <servlet-name>HW</servlet-name>
     <servlet-class>com.cms.HelloWorld</servlet-class>
@@ -11,6 +13,8 @@
     <url-pattern>/hello</url-pattern>
     <url-pattern>/hello1</url-pattern>
   </servlet-mapping>
+    
+  <!-- com.cms.HelloWorld servlet block END-->
   
   <display-name>HelloWorldServlet</display-name>  
   
