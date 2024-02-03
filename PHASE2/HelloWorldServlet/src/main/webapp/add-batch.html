@@ -6,11 +6,33 @@
 </head>
 
 <body>
-	<h2>ADD A NEW BATCH</h2>
+	<h2>ADD A NEW BATCH (using HTTP GET method)</h2>
 	
 	<form action="addBatch" method="GET">
 		
 		<BR>  Batch Name: <input type="text" name="batch-name">
+		<!--<BR>  Password: <input type="password" name="batch-password"> -->	
+		<BR>  Instructor Name: <input type="text" name="batch-instructor">
+		<BR>  Start date: <input type="text" name="batch-start">
+		<BR>  End date: <input type="text" name="batch-end">
+		
+		<BR>  Batch Type: 
+		<BR>	<input type="radio" name="batch-type" value="day-batch"> Day batch
+		<BR>	<input type="radio" name="batch-type" value="evening-batch"> Evening batch
+		
+		<BR><BR><input type="submit" value="CREATE BATCH">
+					
+		
+	</form>
+	
+	<BR><BR>
+	
+	<h2>ADD A NEW BATCH (using HTTP POST method)</h2>
+	
+	<form action="addBatch" method="POST">
+		
+		<BR>  Batch Name: <input type="text" name="batch-name">
+		<!-- <BR>  Password: <input type="password" name="batch-password"> -->		
 		<BR>  Instructor Name: <input type="text" name="batch-instructor">
 		<BR>  Start date: <input type="text" name="batch-start">
 		<BR>  End date: <input type="text" name="batch-end">
