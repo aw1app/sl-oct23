@@ -9,8 +9,8 @@
     <url-pattern>/hello</url-pattern>
     <url-pattern>/hello1</url-pattern>
   </servlet-mapping>
-  
   <display-name>HelloWorldServlet</display-name>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -19,8 +19,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
-  
-  
+ 
+ 
+ 
 </web-app>
