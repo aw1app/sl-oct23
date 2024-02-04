@@ -18,7 +18,7 @@ public class HomeServlet extends HttpServlet {
 		
 		out.print("Content from HomeServlet ");
 		
-		response.sendRedirect("DashboardServlet?sessId="+sessId);
+		response.sendRedirect("dash.html?sessId="+sessId);
 		
 		out.close();
 	}

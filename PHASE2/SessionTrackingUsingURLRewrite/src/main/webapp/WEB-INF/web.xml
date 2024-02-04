@@ -27,6 +27,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DashboardServlet</servlet-name>
-    <url-pattern>/DashboardServlet</url-pattern>
+    <url-pattern>/dash.html</url-pattern>
   </servlet-mapping>
 </web-app>
