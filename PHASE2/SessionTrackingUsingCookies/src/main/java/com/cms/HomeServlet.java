@@ -5,7 +5,10 @@ import java.io.PrintWriter;
 import java.util.Random;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class HomeServlet extends HttpServlet {
 	Random random = new Random();
@@ -16,10 +19,11 @@ public class HomeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();		
 		int sessId = random.nextInt();
 		
-		out.print("Content from HomeServlet ");
+		out.print("Content from HomeServlet ");	
 		
-		// Now share the sessId to the other servlet, by rewriting its url.
-		response.sendRedirect("dash.html?sessId="+sessId);
+		Cookie sessCookie = new Cookie("sessId", sessId+"");
+		
+		response.addCookie(sessCookie);
 		
 		out.close();
 	}
