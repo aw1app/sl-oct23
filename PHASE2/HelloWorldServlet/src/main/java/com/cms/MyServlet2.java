@@ -9,22 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class ServletConfigDemo extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	@Override
-	public void init(ServletConfig config) {
-		System.out.println("INSIDE init ");
-
-		String dbPassword = config.getInitParameter("DB_PASSWORD");
-		System.out.println(" DB_PASSWORD that was set in the init-param is  " + dbPassword);
-
-	}
-
-	@Override
-	public void destroy() {
-		System.out.println("INSIDE destroy ");
-	}
+@WebServlet("/MyServlet2")
+public class MyServlet2 extends HttpServlet {
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,7 +20,7 @@ public class ServletConfigDemo extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		out.println("<center><h1> Content from  ServletConfigDemo Servlet,  </h1></center>");
+		out.println("<center><h1> Content from  MyServlet2 Servlet,  </h1></center>");
 
 		out.close();
 	}
