@@ -19,11 +19,11 @@ public class DashboardServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 
 		if (session != null) {
-			out.println("Welcome User.");
+			out.println("Welcome "+ session.getAttribute("userid"));
 			out.println("<br> We are tracking you.");
 		} else {
 			// no session so no tracking.
-			out.println("Welcome User. I am Dashboard Servlet. We have not tracked you so far.");
+			out.println("Welcome Anonymous User. I am Dashboard Servlet. We have not tracked you so far.");
 			session = request.getSession(true);		
 			out.println("We have just started tracking you.");
 		}

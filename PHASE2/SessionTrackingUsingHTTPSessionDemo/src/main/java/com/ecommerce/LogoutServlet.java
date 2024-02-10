@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
 			session.invalidate();
 		
 		out.print("<center>Logout successful.</center>");
-		//out.print("<br> <a href=\"login.html\">Re Login</a>");
+		out.print("<br> <a href=\"login.html\">Re Login</a>");
 		out.print("<br> <a href=\"index.html\">Go to Index Page</a>");
 	}
     
