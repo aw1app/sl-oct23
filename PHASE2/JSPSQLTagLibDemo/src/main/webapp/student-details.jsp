@@ -8,9 +8,11 @@
 <sql:setDataSource var="cms" url="jdbc:mysql://localhost:3306/cms"
 	driver="com.mysql.cj.jdbc.Driver" user="root" password="rootroot" />
 
-<sql:query dataSource="${cms}" var="result">	SELECT * FROM students	</sql:query>
+<sql:query dataSource="${cms}" var="result">	
+SELECT * FROM students where student_id=<%=request.getParameter("id") %>	
+</sql:query>
 
-<br> STUDENT LIST
+<br> STUDENT DETAILS<hr>
 <table border=1>
 	<tr>
 		<th>student_id
@@ -33,16 +35,3 @@
 	</c:forEach>
 
 </table>
-
-<br> CHALENGE-1: Code a similar JSP, but that fetches only the student's first name and last name
- and displayed so.
-<br> CHALENGE-1-SOLUTION: 
-<sql:query dataSource="${cms}" var="result">Select first_name, last_name from students</sql:query>
- 
-<br> CHALENGE-2: Code a similar JSP, that will get a request parameter id, and it will display 
-all column values of that particular student id.
-
-<br> CHALENGE-3: Code a similar JSP, that will get a request parameter fnlike and it will display 
-all column values of those students whose first names start with fnlike.
- 
- 
