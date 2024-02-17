@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 Version 3<br>
 
-<jsp:useBean id="product1" class="com.ecommerce.Product" scope="session">
+<jsp:useBean id="product1" class="com.ecommerce.Product" scope="request">
 
 	<jsp:setProperty property="*" name="product1"/>
 
