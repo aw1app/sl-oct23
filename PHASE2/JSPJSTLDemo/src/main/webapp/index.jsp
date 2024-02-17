@@ -31,6 +31,6 @@
      
      
      <hr><br><br>Our own custom taglib <hr>
-     <%@ taglib uri="http://example.com/bulletlist" prefix="bl" %>
+     <%@ taglib uri="WEB-INF/bulletlist.tld" prefix="bl" %>
      <bl:bulletlist items="Laptop,Monitor" />
      

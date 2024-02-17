@@ -3,10 +3,11 @@ package com.ecommerce.taglibs;
 import java.io.IOException;
 
 import jakarta.servlet.jsp.JspException;
-import jakarta.servlet.jsp.tagext.SimpleTagSupport;
+import jakarta.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.tagext.TagSupport;
 
 // A Custom lib that will output a bulleted list from a comma separated string
-public class BulletedListFromAString extends SimpleTagSupport {
+public class BulletedListFromAString extends TagSupport {
 
 	private String items;
 
@@ -14,18 +15,25 @@ public class BulletedListFromAString extends SimpleTagSupport {
 		this.items = items;
 	}
 
-	@Override
-	public void doTag() throws JspException, IOException {
+	public int doStartTag() throws JspException {
 
 		String[] itemList = items.split(",");
 
-		getJspContext().getOut().write("<ul>");
+		JspWriter out = pageContext.getOut();
 
-		for (String item : itemList) {
-			getJspContext().getOut().write("<li>" + item.trim() + "</li>");
+		try {
+			out.write("<ul>");
+
+			for (String item : itemList) {
+				out.write("<li>" + item.trim() + "</li>");
+			}
+
+			out.write("</ul>");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
-		getJspContext().getOut().write("</ul>");
+		return SKIP_BODY;
 
 	}
 
