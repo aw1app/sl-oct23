@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+Version 2<br>
 
 <jsp:useBean id="product1" class="com.ecommerce.Product">
 

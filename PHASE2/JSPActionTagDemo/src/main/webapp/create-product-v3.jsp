@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-Version 1<br>
+Version 3<br>
 
-<jsp:useBean id="product1" class="com.ecommerce.Product">
+<jsp:useBean id="product1" class="com.ecommerce.Product" scope="session">
 
-	<jsp:setProperty property="name" param="name" name="product1"/>
-	<jsp:setProperty property="price" param="price" name="product1" />
+	<jsp:setProperty property="*" name="product1"/>
 
 </jsp:useBean>
 
