@@ -32,5 +32,7 @@
      
      <hr><br><br>Our own custom taglib <hr>
      <%@ taglib uri="WEB-INF/bulletlist.tld" prefix="bl" %>
-     <bl:bulletlist items="Laptop,Monitor" />
+     <bl:bulletlist items="Laptop,Monitor,Keyboard,Mouse" />
+     
+     <bl:bulletlist items="A,B,C,D" />   
      

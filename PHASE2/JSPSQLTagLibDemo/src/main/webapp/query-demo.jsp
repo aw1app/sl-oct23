@@ -5,6 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
+<%@ include file="header.jsp" %>
+
 <sql:setDataSource var="cms" url="jdbc:mysql://localhost:3306/cms"
 	driver="com.mysql.cj.jdbc.Driver" user="root" password="rootroot" />
 
@@ -23,7 +25,7 @@
 
 	<c:forEach var="row" items="${result.rows}">
 		<tr>
-			<td><c:out value="${row.student_id}" />
+			<td><c:out value="${row.student_id}" /> 
 			<td><c:out value="${row.first_name}" />
 			<td><c:out value="${row.last_name}" />
 			<td><c:out value="${row.date_of_birth}" />
