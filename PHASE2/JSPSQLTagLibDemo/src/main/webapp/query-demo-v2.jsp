@@ -18,6 +18,7 @@
 	<tr>		
 		<th>FIRST NAME	
 		<th>SHOW DETAILS
+		<th>EDIT
 		<th>DELETE
 	</tr>
 
@@ -25,6 +26,7 @@
 		<tr>			
 			<td><c:out value="${row.first_name}" />
 			<td><a href="student-details.jsp?id=${row.student_id}" > SHOW DETAILS </a>
+			<td><a href="student-edit.jsp?id=${row.student_id}" > EDIT </a>
 			<td><a href="student-delete.jsp?id=${row.student_id}" > DELETE </a>
 		</tr>
 	</c:forEach>
