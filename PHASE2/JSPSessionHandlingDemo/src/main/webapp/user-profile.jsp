@@ -4,13 +4,14 @@
 
 Welcome 
 <%
-if (session.getAttribute("loggedIn").equals("true")){
+if (session.getAttribute("loggedIn") !=null && session.getAttribute("loggedIn").equals("true")){
 	out.print(session.getAttribute("userId"));
+	out.print("<a href='logout.jsp'>LOGOUT</a>");
 }else{
 	out.print("Anonymous User");
 }
 %>
 
 <br><br>
-<a href="logout.jsp">LOGOUT</a>
+
 
