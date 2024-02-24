@@ -1,0 +1,5 @@
+# Created at 2024-02-24T19:51:43.851
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Users\home\git\sl-oct23\PHASE2\my-maven-mongodb-app\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
