@@ -1,16 +1,17 @@
 package com.sl;
 import java.io.IOException;
 
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
-
 import org.bson.Document;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @jakarta.servlet.annotation.WebServlet("/register")
 public class RegisterServlet extends HttpServlet {

@@ -4,10 +4,30 @@
   <groupId>com.example</groupId>
   <artifactId>my-maven-webapp</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>my-maven-webapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <repositories>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+  
   <dependencies>
+	  
+	 
+	  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -15,6 +35,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  
   <build>
     <finalName>my-maven-webapp</finalName>
   </build>
