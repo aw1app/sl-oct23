@@ -25,11 +25,20 @@ public class App {
 
 			// insertOneDocumentDemo(usersCollection, "USER101","USER101@gmail.com",26);
 			
-			updateOneDocumentDemo(usersCollection, "USER101", "email", "USER101.new@gmail.com");
+			//updateOneDocumentDemo(usersCollection, "USER101", "email", "USER101.new@gmail.com");
+			
+			deleteOneDocumentDemo(usersCollection, "USER101");
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+	
+	
+	public static void deleteOneDocumentDemo(MongoCollection<Document> collection, String username) {		
+
+		collection.deleteOne(Filters.eq("username", username));
+
 	}
 
 	public static void updateOneDocumentDemo(MongoCollection<Document> collection, String username, String key,
