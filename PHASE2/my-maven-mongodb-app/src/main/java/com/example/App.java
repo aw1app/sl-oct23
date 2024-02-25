@@ -8,6 +8,8 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import com.mongodb.client.model.Filters;
+
 public class App {
 
 	public static void main(String[] args) {
@@ -19,26 +21,33 @@ public class App {
 			MongoDatabase database = mongoClient.getDatabase("mydatabase");
 			MongoCollection<Document> usersCollection = database.getCollection("users");
 
-			//listAllDocumentsDemo(usersCollection);
+			// listAllDocumentsDemo(usersCollection);
+
+			// insertOneDocumentDemo(usersCollection, "USER101","USER101@gmail.com",26);
 			
-			insertOneDocumentDemo(usersCollection, "USER101","USER101@gmail.com",26);
-			
+			updateOneDocumentDemo(usersCollection, "USER101", "email", "USER101.new@gmail.com");
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 
+	public static void updateOneDocumentDemo(MongoCollection<Document> collection, String username, String key,
+			String new_value) {
+
+		Document doc = new Document("$set", new Document(key, new_value));
+
+		collection.updateOne(Filters.eq("username", username), doc);
+
+	}
+
 	public static void insertOneDocumentDemo(MongoCollection<Document> collection, String username, String email,
 			int age) {
-		
+
 		Document user = new Document();
-		
-		user
-		.append("email", email)
-		.append("username", username)
-		.append("age", age);
-		
+
+		user.append("email", email).append("username", username).append("age", age);
+
 		collection.insertOne(user);
 	}
 
