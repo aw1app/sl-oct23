@@ -34,9 +34,9 @@ public class App {
 			// insertOneDocumentDemo(usersCollection, "USER102","USER102@gmail.com",28);
 
 			// Update the document whose username attribute is "USER102", change its email to "USER10002@gmail.com"
-			 updateOneDocumentDemo(usersCollection, "USER102", "email", "USER10002@gmail.com");
+			// updateOneDocumentDemo(usersCollection, "USER102", "email", "USER10002@gmail.com");
 
-			// deleteOneDocumentDemo(usersCollection, "USER101");
+			 deleteOneDocumentDemo(usersCollection, "USER102");
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -90,8 +90,10 @@ public class App {
 		// The attr that we want change, create a document
 		Document attributeChangeDoc =  new Document(email, new_email_value);
 
+		// Wrap the above the document in a new document and add the $set instruction 
 		Document doc = new Document("$set", attributeChangeDoc);
 
+		// Finally effect the update!
 		collection.updateOne(Filters.eq("username", username), doc);
 
 	}
