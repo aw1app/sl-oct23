@@ -21,20 +21,42 @@ public class App {
 			MongoDatabase database = mongoClient.getDatabase("mydatabase");
 			MongoCollection<Document> usersCollection = database.getCollection("users");
 
-			// listAllDocumentsDemo(usersCollection);
+			//listAllDocumentsDemo(usersCollection);
+			
+			int age=30;
+			listAllDocumentsHavingAge(usersCollection, age);
 
-			// insertOneDocumentDemo(usersCollection, "USER101","USER101@gmail.com",26);
+			// insertOneDocumentDemo(usersCollection, "USER102","USER102@gmail.com",28);
 			
 			//updateOneDocumentDemo(usersCollection, "USER101", "email", "USER101.new@gmail.com");
 			
-			deleteOneDocumentDemo(usersCollection, "USER101");
+			//deleteOneDocumentDemo(usersCollection, "USER101");
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 	
+	// Challenge: How will you find all users having age > 30 and name is Alice
 	
+	
+	private static void listAllDocumentsHavingAge(MongoCollection<Document> usersCollection, int age) {
+		
+		FindIterable<Document> usersHavingAge30 = usersCollection.find(Filters.eq("age", 30));
+		
+		System.out.println("** Users Documents Having age 30**");
+		for (Document user : usersHavingAge30) {
+			System.out.println("** User **");
+			System.out.println("Age: " + user.getInteger("age"));
+			System.out.println("Username:  " + user.getString("username"));
+			System.out.println("Email :  " + user.getString("email"));
+			System.out.println("Name :  " + user.getString("name"));
+			System.out.println("");
+		}
+		
+	}
+
+
 	public static void deleteOneDocumentDemo(MongoCollection<Document> collection, String username) {		
 
 		collection.deleteOne(Filters.eq("username", username));
@@ -55,7 +77,10 @@ public class App {
 
 		Document user = new Document();
 
-		user.append("email", email).append("username", username).append("age", age);
+		user
+		.append("email", email)
+		.append("username", username)
+		.append("age", age);
 
 		collection.insertOne(user);
 	}
@@ -68,6 +93,7 @@ public class App {
 			System.out.println("Age: " + user.getInteger("age"));
 			System.out.println("Username:  " + user.getString("username"));
 			System.out.println("Email :  " + user.getString("email"));
+			System.out.println("Name :  " + user.getString("name"));
 			System.out.println("");
 		}
 
