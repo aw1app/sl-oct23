@@ -2,7 +2,9 @@ package junitdemo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,15 +12,27 @@ class CalculatorTest {
 	Calculator calulator1;
 	
 	
+	@BeforeAll
+	void myBeforeAll() {
+		System.out.println(" INSIDE myBeforeAll. My-Speciality: I will run before the first test case in this class. I will be run only once ");
+		
+	}
+	
+	@AfterAll
+	void myAfterAll() {
+		System.out.println(" INSIDE myAfterAll. My-Speciality: I will run after the last test case in this class. I will be run only once ");
+		
+	}
+	
 	@BeforeEach
 	void myBeforeEach() {
-		System.out.println(" INSIDE myBeforeEach ");
+		System.out.println(" INSIDE myBeforeEach. My-Speciality: I will run before each test case in this class  ");
 		calulator1 = new Calculator();
 	}
 	
 	@AfterEach
 	void myAfterEach() {
-		System.out.println(" INSIDE myAfterEach ");
+		System.out.println(" INSIDE myAfterEach. My-Speciality: I will run after each test case in this class ");
 		calulator1 = null;
 	}
 	
