@@ -29,5 +29,13 @@ public class Product {
 		this.price = price;
 	}
 	
+	public void hi() {
+		System.out.println("Hi");
+	}
+	
+	public void bye() {
+		System.out.println("Bye");
+	}
+	
 
 }

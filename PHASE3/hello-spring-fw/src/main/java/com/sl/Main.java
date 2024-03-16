@@ -21,6 +21,9 @@ public class Main {
 		System.out.println();
 		System.out.println("Product p2's name is " + p2.getName());
 		System.out.println("Product p2's price is " + p2.getPrice());
+		
+		
+		((ClassPathXmlApplicationContext) context).close();
 
 	}
 

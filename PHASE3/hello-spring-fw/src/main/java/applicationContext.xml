@@ -5,7 +5,7 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Bean definition for Product using constructor-->
-	<bean id="product1" class="com.sl.Product">
+	<bean id="product1" class="com.sl.Product" init-method="hi" destroy-method="bye">
 		<constructor-arg value="Mobile Phone" />
 		<constructor-arg value="999" />
 	</bean>
