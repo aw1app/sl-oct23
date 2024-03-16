@@ -1,0 +1,12 @@
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean definition for Product -->
+	<bean id="product1" class="com.sl.Product">
+		<constructor-arg value="Mobile Phone" />
+		<constructor-arg value="999" />
+	</bean>
+</beans>
