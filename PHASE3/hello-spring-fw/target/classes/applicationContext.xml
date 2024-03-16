@@ -4,9 +4,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Bean definition for Product -->
+	<!-- Bean definition for Product using constructor-->
 	<bean id="product1" class="com.sl.Product">
 		<constructor-arg value="Mobile Phone" />
 		<constructor-arg value="999" />
 	</bean>
+	
+	
+	<!-- Bean definition for Product using setter injection-->
+	<bean id="product2" class="com.sl.Product">
+		<property name="name" value="SSD Drive" />
+		<property name="price" value="99" />
+	</bean>
+	
+	
 </beans>

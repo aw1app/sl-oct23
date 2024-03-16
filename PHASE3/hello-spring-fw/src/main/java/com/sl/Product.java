@@ -5,6 +5,9 @@ public class Product {
 	String name;
 	float price;
 	
+	public Product() {
+		
+	}
 		
 	public Product(String name, float price) {
 		super();
