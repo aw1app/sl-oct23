@@ -29,10 +29,12 @@ public class Product {
 		this.price = price;
 	}
 	
+	// Init-method demo (refer to applicationContext.xml)
 	public void hi() {
 		System.out.println("Hi");
 	}
 	
+	// destruct-method demo
 	public void bye() {
 		System.out.println("Bye");
 	}
