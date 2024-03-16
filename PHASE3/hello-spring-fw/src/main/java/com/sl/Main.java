@@ -9,11 +9,13 @@ public class Main {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+		// Constructor Injection Demo
 		Product p1 = (Product) context.getBean("product1");
 
 		System.out.println("Product p1's name is " + p1.getName());
 		System.out.println("Product p1's price is " + p1.getPrice());
 		
+		// Setter Injection Demo
 		Product p2 = (Product) context.getBean("product2");
 
 		System.out.println();
@@ -22,19 +24,6 @@ public class Main {
 
 	}
 
-	/*
-	 * public static void main0(String[] args) {
-	 * 
-	 * Resource resource = new ClassPathResource("applicationContext.xml"));
-	 * 
-	 * BeanFactory factory = new BeanFactory();
-	 * 
-	 * Product p1 = (Product) factory.getBean("product1");
-	 * 
-	 * System.out.println("Product p1's name is " + p1.getName());
-	 * System.out.println("Product p1's price is " + p1.getPrice());
-	 * 
-	 * }
-	 */
+	
 
 }
