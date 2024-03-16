@@ -20,6 +20,7 @@
 	<bean id="product2" class="com.sl.Product">
 		<property name="name" value="SSD Drive" />
 		<property name="price" value="99" />
+		<property name="brand" ref="brand1" />
 	</bean>
 
 
