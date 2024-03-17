@@ -14,7 +14,8 @@ public class Main {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 
-		// Constructor Injection Demo
+		// Constructor Injection Demo 
+		// context.getBean(Product.class) will work ONLY if there no named bean @Bean defined in any @Confiuration class
 //		Product p1 = (Product) context.getBean(Product.class);		
 //		
 //
