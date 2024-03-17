@@ -16,11 +16,13 @@ public class Main {
 		
 		BankAccount bankAcct = (BankAccount) context.getBean(BankAccount.class);
 		
-		//Deposit 
+		//Deposit (Before and After interceptors will get triggered  here)
 		bankAcct.deposit(10000.0d);
 		
+		//(Before and After interceptors will get triggered  here)
 		bankAcct.withdraw(1000.0d);	
 		
+		//(Before  After and also AfterReturning interceptors will get triggered  here)
 		bankAcct.withdraw(5000.0d);	
 		
 
