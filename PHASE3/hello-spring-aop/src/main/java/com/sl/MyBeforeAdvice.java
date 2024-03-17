@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class MyBeforeAdvice {
 	
 	
-	// apply this interceptior for all methods of com.sl.BankAccount
+	// apply this intercepter for all methods of com.sl.BankAccount
 	@Before("execution(* com.sl.BankAccount.*(..))")
 	public void m1() {
 		
@@ -29,7 +29,7 @@ public class MyBeforeAdvice {
 	
 	
 	
-	// Write an interceptior that will log only when withdrawing > 5000
+	// Challenge : Write an interceptior that will log only when withdrawing > 5000
 	// Use after-returning type of interceptor
 
 }
