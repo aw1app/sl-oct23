@@ -12,12 +12,16 @@ public class BankAccount {
 		System.out.println("Deposited: $" + amount);
 	}
 
-	public void withdraw(double amount) {
+	public double withdraw(double amount) {
 		if (balance >= amount) {
 			balance -= amount;
+			
 			System.out.println("Withdrawn: $" + amount);
+			return amount;
+			
 		} else {
 			System.out.println("Insufficient funds");
+			return 0.0d;
 		}
 	}
 
