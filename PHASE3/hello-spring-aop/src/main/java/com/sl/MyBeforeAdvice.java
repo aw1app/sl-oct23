@@ -26,8 +26,8 @@ public class MyBeforeAdvice {
 
 	}
 
-	// Challenge : Write an interceptior that will log only when withdrawing > 5000
-	// Use after-returning type of interceptor
+	// Challenge : Write an intercepter that will log only when withdrawing > 5000
+	// Use after-returning type of intercepter
 
 	@AfterReturning(pointcut="execution(* com.sl.BankAccount.withdraw(..))", returning = "result")
 	public void m3(double result) {

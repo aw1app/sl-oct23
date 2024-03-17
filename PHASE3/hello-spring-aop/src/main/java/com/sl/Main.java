@@ -19,6 +19,8 @@ public class Main {
 		//Deposit 
 		bankAcct.deposit(10000.0d);
 		
+		bankAcct.withdraw(1000.0d);	
+		
 		bankAcct.withdraw(5000.0d);	
 		
 
