@@ -1,14 +1,28 @@
 package com.sl.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="students")
 public class Student {
 
+	@Id
+	@GeneratedValue
+	@Column(name="student_id")
 	int studentId;
+	
+	@Column(name="first_name")
 	String firstName;
-	String lastName;
+	
+	String lastName;	
 	Date dateOfBirth;
-	Date enrollmentDate;
+	Date enrollmentDate;	
 	String sessionName;
 
 	public int getStudentId() {
