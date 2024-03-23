@@ -3,60 +3,60 @@ package com.sl.entity;
 import java.util.Date;
 
 public class Student {
-	
-	int student_id;
-	String first_name;
-	String last_name;
-	Date date_of_birth;
-	Date enrollment_date;
-	String session_name;
 
-	public int getStudent_id() {
-		return student_id;
+	int studentId;
+	String firstName;
+	String lastName;
+	Date dateOfBirth;
+	Date enrollmentDate;
+	String sessionName;
+
+	public int getStudentId() {
+		return studentId;
 	}
 
-	public void setStudent_id(int student_id) {
-		this.student_id = student_id;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public Date getDate_of_birth() {
-		return date_of_birth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setDate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public Date getEnrollment_date() {
-		return enrollment_date;
+	public Date getEnrollmentDate() {
+		return enrollmentDate;
 	}
 
-	public void setEnrollment_date(Date enrollment_date) {
-		this.enrollment_date = enrollment_date;
+	public void setEnrollmentDate(Date enrollmentDate) {
+		this.enrollmentDate = enrollmentDate;
 	}
 
-	public String getSession_name() {
-		return session_name;
+	public String getSessionName() {
+		return sessionName;
 	}
 
-	public void setSession_name(String session_name) {
-		this.session_name = session_name;
+	public void setSessionName(String sessionName) {
+		this.sessionName = sessionName;
 	}
 
 }
