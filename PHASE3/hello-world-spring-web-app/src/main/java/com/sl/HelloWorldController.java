@@ -39,5 +39,11 @@ public class HelloWorldController {
 		
 		return "hello4: Hi there";
 	}
+	
+	@GetMapping("/hi")
+	public String hi() {
+		
+		return "hello-Hi-there"; // display WEB-INF/views/hello-Hi-there.jsp
+	}
 
 }
