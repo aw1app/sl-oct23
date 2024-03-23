@@ -25,7 +25,7 @@ public class HelloWorldController {
 		return "hello2 : Hi there";
 	}
 	
-	@RequestMapping(name="/hello3", method=RequestMethod.GET)
+	@RequestMapping(path ="/hello3", method=RequestMethod.GET)
 	@ResponseBody
 	public String hello3() {
 		
@@ -33,7 +33,7 @@ public class HelloWorldController {
 	}
 	
 	
-	@RequestMapping(name="/hello4", method=RequestMethod.POST)
+	@RequestMapping(path="/hello4", method=RequestMethod.POST)
 	@ResponseBody
 	public String hello4() {
 		
