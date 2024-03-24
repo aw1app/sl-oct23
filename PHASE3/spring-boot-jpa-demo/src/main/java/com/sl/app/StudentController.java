@@ -1,6 +1,7 @@
 package com.sl.app;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,20 @@ public class StudentController {
 		model.addAttribute("students", students);
 		
 		return "list-students";
+	}
+	
+	@GetMapping("/details")
+	public String studentDetails(Model model, int id) {
+		
+		Optional<Student> studentFromRepo = studentRepositry.findById(id);
+		
+		if(studentFromRepo.isPresent()) {
+			Student student = studentFromRepo.get();
+			model.addAttribute("student", student);
+		}
+		
+		
+		return "student-detail";
 	}
 	
 
