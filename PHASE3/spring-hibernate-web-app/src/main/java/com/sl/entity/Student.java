@@ -1,5 +1,6 @@
 package com.sl.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import jakarta.persistence.Column;
@@ -10,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="students")
-public class Student {
+public class Student implements Serializable{
 
 	@Id
 	@GeneratedValue

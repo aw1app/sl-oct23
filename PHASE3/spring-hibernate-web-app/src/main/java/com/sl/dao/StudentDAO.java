@@ -17,6 +17,10 @@ public class StudentDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+//	public void setSessionFactory(SessionFactory sessionFactory) {
+//		this.sessionFactory=sessionFactory;
+//	}
+	
 	// Business Methods
 	public List<Student> getAllStudents(){
 		
