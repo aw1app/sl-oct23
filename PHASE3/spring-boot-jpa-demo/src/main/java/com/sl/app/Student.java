@@ -1,6 +1,5 @@
-package com.sl.entity;
+package com.sl.app;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 import jakarta.persistence.Column;
