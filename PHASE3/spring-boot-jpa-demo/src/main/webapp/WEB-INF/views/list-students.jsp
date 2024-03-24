@@ -10,9 +10,7 @@
 		<th>ID
 		<th>FISRT_NAME
 		<th>LAST_NAME
-		<th>DOB
-		<th>ENROLLED ON
-		<th>SESSION NAME
+		<th>DETAILS		
 	</tr>
 
 	<c:forEach var="student" items="${students}">
@@ -20,8 +18,6 @@
 			<td>${student.studentId}
 			<td>${student.firstName}
 			<td>${student.lastName}
-			<td>${student.dateOfBirth}	
-			<td>${student.enrollmentDate}
-			<td>${student.sessionName}		
+			<td><a href="details?id=${student.studentId}">SHOW DETAILS</a>
 		</tr>
 </c:forEach>
