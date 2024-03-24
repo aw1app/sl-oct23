@@ -16,6 +16,8 @@ public class StudentController {
 	@Autowired
 	StudentRepositry studentRepositry;
 	
+		
+	
 	@GetMapping("/list")
 	public String listAllStudents(Model model) {
 		
