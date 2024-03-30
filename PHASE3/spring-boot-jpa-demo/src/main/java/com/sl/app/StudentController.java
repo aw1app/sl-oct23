@@ -55,6 +55,7 @@ public class StudentController {
 		
 		
 		student = studentRepositry.save(student);
+		
 		model.addAttribute("studentId", student.getStudentId());
 		
 		return "add-student-success";
