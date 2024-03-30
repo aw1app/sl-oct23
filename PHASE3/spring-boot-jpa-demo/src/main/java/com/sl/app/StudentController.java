@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StudentController {
@@ -60,7 +61,7 @@ public class StudentController {
 
 	// EDIT FUNCTIONALITY
 	@GetMapping("/edit-student")
-	public String editStudentShowForm(Model model, int id) {
+	public String editStudentShowForm(Model model, @RequestParam int id) {
 
 		Optional<Student> studentFromRepo = studentRepositry.findById(id);
 
@@ -72,7 +73,15 @@ public class StudentController {
 			model.addAttribute("id", id);
 			return "no-such-student";
 		}
+	}
+	
+	@PostMapping("/edit-student")
+	public String saveEditedStudent(Model model, @ModelAttribute("student") Student student) {
+		studentRepositry.save(student);
+		
+		model.addAttribute("studentId", student.getStudentId());
 
+		return "edit-student-success";		
 	}
 
 }
