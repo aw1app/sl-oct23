@@ -11,7 +11,8 @@
 		<th>FISRT_NAME
 		<th>LAST_NAME
 		<th>DETAILS
-		<th>EDIT		
+		<th>EDIT
+		<th>DELETE		
 	</tr>
 
 	<c:forEach var="student" items="${students}">
@@ -21,6 +22,7 @@
 			<td>${student.lastName}
 			<td><a href="details?id=${student.studentId}">SHOW DETAILS</a>
 			<td><a href="edit-student?id=${student.studentId}">EDIT</a>
+			<td><a href="delete-student?id=${student.studentId}">DELETE</a>
 		</tr>
 </c:forEach>
 
