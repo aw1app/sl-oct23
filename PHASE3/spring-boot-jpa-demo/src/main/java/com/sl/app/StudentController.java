@@ -74,14 +74,34 @@ public class StudentController {
 			return "no-such-student";
 		}
 	}
-	
+
 	@PostMapping("/edit-student")
 	public String saveEditedStudent(Model model, @ModelAttribute("student") Student student) {
 		studentRepositry.save(student);
-		
+
 		model.addAttribute("studentId", student.getStudentId());
 
-		return "edit-student-success";		
+		return "edit-student-success";
+	}
+
+	// DELETE FUNCTIONALITY
+	@GetMapping("/delete-student")
+	public String deleteStudent(Model model, @RequestParam int id) {
+
+		Optional<Student> studentFromRepo = studentRepositry.findById(id);
+
+		if (studentFromRepo.isPresent()) {
+
+			Student student = studentFromRepo.get();
+			studentRepositry.delete(student);
+
+			model.addAttribute("id", id);
+			return "delete-student-success";
+		} else {
+			model.addAttribute("id", id);
+			return "no-such-student";
+		}
+
 	}
 
 }
