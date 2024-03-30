@@ -6,7 +6,7 @@
 
 <div align="center">
 
-	<form:form action="edit-student" method="post" modelAttribute="student">
+	<form:form action="edit-student" method="POST" modelAttribute="student">
 	
 	<form:input path="studentId" value="${student.studentId}" hidden="true"/>
 
@@ -34,8 +34,7 @@
 		<form:input path="sessionName" value="${student.sessionName}"/>
 		<br />
 		
-		<br />
-		
+		<br />	
 		
 
 		<form:button>Save Student</form:button>

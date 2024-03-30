@@ -14,3 +14,6 @@
 </c:if>
 
 <c:if test="${student == null }"> No such Student with the id!! </c:if>
+
+<br><br>
+<a href="/index.jsp" > Back to HOME</a>
