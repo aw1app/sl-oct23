@@ -28,7 +28,7 @@ public class StudentController {
 	}
 
 	@GetMapping("/details")
-	public String studentDetails(Model model, int id) {
+	public String studentDetails(Model model, @RequestParam int id) {
 
 		Optional<Student> studentFromRepo = studentRepositry.findById(id);
 
