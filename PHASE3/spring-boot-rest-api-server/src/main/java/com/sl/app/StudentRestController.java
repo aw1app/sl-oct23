@@ -23,4 +23,7 @@ public class StudentRestController {
 		return students;
 	}
 	
+	// Challenge : Fetch details of a single student
+	@GetMapping("/student/{id}")
+	
 }
