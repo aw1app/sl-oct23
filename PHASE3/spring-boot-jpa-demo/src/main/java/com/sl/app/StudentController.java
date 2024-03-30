@@ -26,7 +26,7 @@ public class StudentController {
 		model.addAttribute("students", students);
 		
 		return "list-students";
-	}
+	} 
 	
 	@GetMapping("/details")
 	public String studentDetails(Model model, int id) {
@@ -51,10 +51,11 @@ public class StudentController {
 	}
 	
 	@PostMapping("/add-student")
-	public String addStudent(@ModelAttribute("student") Student student) {	
+	public String addStudent(Model model, @ModelAttribute("student") Student student) {	
 		
 		
-		studentRepositry.save(student);
+		student = studentRepositry.save(student);
+		model.addAttribute("studentId", student.getStudentId());
 		
 		return "add-student-success";
 	}

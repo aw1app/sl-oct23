@@ -9,6 +9,8 @@ import com.sl.app.Student;
 public interface StudentRepositry extends JpaRepository<Student, Integer>{
 	
 	
-	
+	//findAll, findById
+	// save, saveAll
+	//deleteById, delete, deleteAll
 
 }
