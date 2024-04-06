@@ -17,12 +17,7 @@ public class UIController {
 		
 	
 		Course[] courses = restTemplate.getForObject("http://localhost:8081/courses/all", Course[].class);
-		
-		for(Course s: courses) {
-			System.out.println("COURSE DETAILS");
-			System.out.println(s.getId());
-			System.out.println(s.getName());
-		}
+	
 		
 		model.addAttribute("courses", courses);
 		
@@ -38,10 +33,7 @@ public class UIController {
 		
 		model.addAttribute("students", students);
 		
-//		for(Student s: students) {
-//			System.out.println(s.);
-//		}
-		
+
 		return "students"; // display students.jsp
 	}
 

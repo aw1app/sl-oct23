@@ -16,3 +16,7 @@
 		</tr>
 	</c:forEach>
 </table>
+
+
+<br><br><br><br>
+<a href="/">Back to Home</a>
