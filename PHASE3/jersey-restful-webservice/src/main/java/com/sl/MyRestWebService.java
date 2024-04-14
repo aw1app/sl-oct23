@@ -25,7 +25,7 @@ public class MyRestWebService {
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public String hello() {
-		return "<message>Hello!</message>";
+		return "<message><messageText>Hello!</messageText><messageTone>Happy</messageTone></message>";
 	}
 	
 
