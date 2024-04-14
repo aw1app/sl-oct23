@@ -8,10 +8,25 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/my-restful-webservice")
 public class MyRestWebService {
 
+//	@GET
+//	@Produces(MediaType.TEXT_PLAIN)
+//	public String hello() {
+//		return "Hello!";
+//	}
+	
+	
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public String hello() {
+//		return "{\"message\":\"Hello!\"}";
+//	}
+	
+	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_XML)
 	public String hello() {
-		return "Hello!";
+		return "<message>Hello!</message>";
 	}
+	
 
 }
