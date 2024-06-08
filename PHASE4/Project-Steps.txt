@@ -1,0 +1,17 @@
+1. Your spring boot jpa project in github
+
+2. Launch EC2 (open ports 80,2077,8080 in your SecGrp)
+install git
+install jdk 17
+install maven
+install docker
+install jenkins
+
+
+3. Create a Jenkins Pipeline project
+    pipeline scripts should have these stages
+    checkout
+    building the jar
+    docker image creation
+
+4. Manually run the docker image created by the Jenkins Job.
