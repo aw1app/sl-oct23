@@ -1,0 +1,51 @@
+How to install software on EC2.
+
+Log in to your EC2 using your Key-Pair
+
+sudo yum update -y
+
+sudo yum install git -y
+
+# JDK
+
+# Import the Corretto public key and enable the repository
+sudo rpm --import https://yum.corretto.aws/corretto.key
+sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+
+# Install Corretto 17
+sudo yum install -y java-17-amazon-corretto-devel
+
+echo 'export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto' >> ~/.bashrc
+echo 'export PATH=$PATH:$JAVA_HOME/bin' >> ~/.bashrc
+
+# Apply the changes
+source ~/.bashrc
+
+
+#MAVEN
+sudo yum install maven -y
+
+
+#DOCKER
+sudo amazon-linux-extras install docker -y
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+
+sudo systemctl enable docker
+
+#verification
+docker --version
+
+#INSTALL JENKINS
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+sudo yum install jenkins -y
+
+sudo service jenkins start
+
+sudo systemctl enable jenkins
+
+#verification Access Jenkins
+#http://<your-ec2-public-ip>:8080
+
