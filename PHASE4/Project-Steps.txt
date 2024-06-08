@@ -1,11 +1,12 @@
 1. Your spring boot jpa project in github
 
-2. Launch EC2 (open ports 80,2077,8080 in your SecGrp)
+2. Launch EC2 (open ports 80,2375,2376,2377,8080 in your SecGrp)
 install git
 install jdk 17
 install maven
 install docker
 install jenkins
+install mysql sevver
 
 
 3. Create a Jenkins Pipeline project

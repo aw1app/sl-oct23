@@ -27,7 +27,7 @@ sudo yum install maven -y
 
 
 #DOCKER
-sudo amazon-linux-extras install docker -y
+sudo yum install docker -y
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 
@@ -37,15 +37,23 @@ sudo systemctl enable docker
 docker --version
 
 #INSTALL JENKINS
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+#ON the EC2 you want install Jenkins (for CICD pipeline)
+curl https://sg.mirror.servanamanaged.com/jenkins/war-stable/2.426.3/jenkins.war -o jenkins.war
 
-sudo yum install jenkins -y
-
-sudo service jenkins start
-
-sudo systemctl enable jenkins
+java -jar jenkins.war
 
 #verification Access Jenkins
 #http://<your-ec2-public-ip>:8080
+
+#MYSQL SERVER
+sudo yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+sudo yum-config-manager --disable mysql80-community
+sudo yum-config-manager --enable mysql57-community
+
+sudo yum install mysql-community-server
+sudo systemctl start mysqld
+sudo systemctl enable mysqld
+
+#Optional to set root password
+sudo mysql_secure_installation
 
