@@ -1,9 +1,27 @@
+CORRECTION 1:
+In the service class:
+
 export class EmployeeService {
 
-//CORRECTED
+//CORRECTED METHOD
  getEmployeesList(): Observable<Employee[]>{
 	    return this.httpClient.get<employees: Employee[]>(this.baseUrl);
 	   }
 
 }
+
+
+CORRECTION 2:
+In the component class:
+
+ngOnInit(): void {
+    this.employeeService.getEmployeesList().subscribe(
+      (response) => {
+        this.employees = response;
+      },
+      (error) => {
+        console.error('Error fetching employees:', error);
+      }
+    );
+  }
 
