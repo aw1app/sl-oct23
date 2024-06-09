@@ -1,0 +1,9 @@
+export class EmployeeService {
+
+//CORRECTED
+ getEmployeesList(): Observable<Employee[]>{
+	    return this.httpClient.get<employees: Employee[]>(this.baseUrl);
+	   }
+
+}
+
